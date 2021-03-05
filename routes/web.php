@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('admin.layouts.page',['title'=>'demo']);
+    return view('admin.layouts.page',[
+        'title'=>'demo',
+        'header'=>'header',
+        'description'=>'description',
+        'content'=>'content',
+        'header'=>'header',
+        ]);
 });
+
+Route::get('/demo/form', 'DemoController@formDemo');

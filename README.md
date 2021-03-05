@@ -1,6 +1,10 @@
 # Laradmin
 A laravel administrative interface that can help you build a CRUD backend with low/no-code. Inspired by [laravel-admin](https://laravel-admin.org/docs/en/), but the difference is Laradmin builds backend base on metadata, not widgets and components that implement interfaces.
 
+## Group Member
+JF Xia - 10 years in IT
+Joseph Kwan - 3 years pythonista in FinTech
+
 ## Requirements
 PHP >= 7.2
 Laravel = 6.20
@@ -56,7 +60,7 @@ Laravel = 6.20
 
 ## Open API
 - [Google Map] (http://Google.com)
-- [COS]
+- [Cloud Object Storage] (tencent or aliyun)
 
 ## Demo Application
 
