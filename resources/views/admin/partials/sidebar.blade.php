@@ -6,7 +6,7 @@
           </button>
           <h1 class="navbar-brand navbar-brand-autodark">
             <a href=".">
-              <img src="/static/logo-white.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+              <img src="/logo.png" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
           </h1>
           
