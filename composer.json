@@ -1,9 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "jj/laradmin",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A laravel administrative interface",
     "keywords": [
-        "framework",
+        "admin",
+        "low-code",
         "laravel"
     ],
     "license": "MIT",
@@ -11,7 +12,8 @@
         "php": "^7.2.5|^8.0",
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",
