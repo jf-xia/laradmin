@@ -6,7 +6,7 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('admin.widgets.form.error')
+        @include('tabler.widgets.form.error')
 
 
         @if ($prepend)
@@ -17,7 +17,7 @@
         @if ($append)
             <span class="input-group-append">{!! $append !!}</span>
         @endif
-        <!-- include('admin.widgets.form.help-block') -->
+        <!-- include('tabler.widgets.form.help-block') -->
 
     </div>
 </div>

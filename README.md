@@ -12,7 +12,7 @@ Laravel = 6.20
 
 ## Features
 - User Management with RBAC (Role-Based Access Control) - JF Xia
-- CRUD Backend Model Grid/Form - JF Xia
+- CRUD Backend Model Page Template(tabler)/Grid/Form - JF Xia
 - CRUD Backend Model Show/Widgets - JF Xia/Joseph Kwan
 - CRUD Backend Designer & Generator - Joseph Kwan
 - Report Designer & Generator - Joseph Kwan

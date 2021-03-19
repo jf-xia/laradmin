@@ -1,24 +1,24 @@
 
   <body class="antialiased">
     <div class="page">
-    @include('admin.partials.sidebar')
+    @include('tabler.partials.sidebar')
     <div class="content">
         <div class="container-xl">
           <div class="content-header">
             <section class="content-header breadcrumbs-top">
                 <h1 class=" float-left">
-                    <span class="text-capitalize">{!! $header !!}</span>
-                    <small>{!! $description !!}</small>
+                    <span class="text-capitalize">{{ $page->title }}</span>
+                    <small>{!! $page->description !!}</small>
                 </h1>
             </section>
           </div>
 
           <div class="content-body" id="app">
-            @include('admin.partials.alerts')
+            @include('tabler.partials.alerts')
 
-            {!! $content !!}
+            {!! $page->html() !!}
 
-            @include('admin.partials.toastr')
+            @include('tabler.partials.toastr')
           </div>
         </div>
         <footer class="footer footer-transparent d-print-none">

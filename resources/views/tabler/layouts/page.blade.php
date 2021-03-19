@@ -12,11 +12,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
-    {{-- 默认使用谷歌浏览器内核--}}
+    
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>{{ $title }}</title>
+    <title>{{ $page->title }}</title>
     <!-- CSS files -->
     <link href="/dist/css/tabler.min.css" rel="stylesheet"/>
     <link href="/dist/css/tabler-flags.min.css" rel="stylesheet"/>
@@ -25,4 +25,4 @@
     <link href="/dist/css/demo.min.css" rel="stylesheet"/>
 </head>
 
-@extends('admin.layouts.container')
+@extends('tabler.layouts.container')

@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\System\Page;
+
 Route::get('/', function () {
     return view('admin.layouts.page',[
         'title'=>'demo',
@@ -20,5 +22,13 @@ Route::get('/', function () {
         'header'=>'header',
         ]);
 });
+
+foreach (Page::all() as $key => $page) {
+    Route::resource('/page', 'System\PageController');////'.$page->url
+}
+
+Route::resource('/user', 'Auth\UserController');
+Route::resource('/role', 'Auth\RoleController');
+Route::resource('/permission', 'Auth\PermissionController');
 
 Route::get('/demo/form', 'DemoController@formDemo');
