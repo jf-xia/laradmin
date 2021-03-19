@@ -18,13 +18,16 @@ class Page extends Model
   {
     $this->modelObject = new $this->model();
     foreach ($this->template as $view=>$data) {
-      if (isset($data['subTemplate']) && $data['subTemplate']==1) {
-        $this->html .= $this->{$view}($data);
-      } else {
-        $this->html .= view('tabler.widgets.'.$view,['data'=>$data]);
-      }
+      $this->html .= $this->{$view}($data);
     }
     return $this->html;
+  }
+
+  protected function table($data)
+  {
+    $rows = $this->modelObject->paginate();
+    // dd($rows->all());
+    return view('tabler.widgets.table',compact('data','rows'))->render();
   }
 
   protected function form($data)
