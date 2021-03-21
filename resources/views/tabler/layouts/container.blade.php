@@ -49,8 +49,8 @@
       </div>
     </div>
     <!-- Tabler Core -->
+    <script src="/dist/js/jquery-3.5.1.min.js"></script>
     <script src="/dist/js/tabler.min.js"></script>
-    <script>
-		</script>
+    @yield("js")
   </body>
 </html>

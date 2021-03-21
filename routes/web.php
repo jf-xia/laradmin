@@ -23,8 +23,10 @@ Route::get('/', function () {
         ]);
 });
 
+Route::resource('/page', 'System\PageController');
 foreach (Page::all() as $key => $page) {
-    Route::resource('/page', 'System\PageController');////'.$page->url
+    Route::resource('/model/'.$page->url, 'System\ModelController');
+    Route::get('/search/'.$page->url, 'System\ModelController@search');
 }
 
 Route::resource('/user', 'Auth\UserController');

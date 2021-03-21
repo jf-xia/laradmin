@@ -36,11 +36,7 @@ class PageController
 
     public function show(Request $request, $id)
     {
-        // Page::query()->paginate()->items();
         $page=Page::query()->firstWhere('url',$id);
-        // $modelName='App\\Models\\'.ucwords($id);
-        // $model = new $modelName();
-        // dd($id);
         return view('tabler.layouts.page',compact('page'));
     }
 

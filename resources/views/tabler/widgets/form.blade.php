@@ -7,6 +7,7 @@
           </div>
           <div class="modal-body">
             <form action="{!! $data['action'] !!}" method="POST">
+                {{ csrf_field() }}
                 {!! $data['fields'] !!}
                 <div class="form-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
