@@ -18,48 +18,10 @@ class Page extends Model
   {
     $this->modelObject = new $this->model();
     foreach ($this->template as $view=>$data) {
-      $this->html .= $this->{$view}($data);
+      $widget = "App\\Widgets\\".ucfirst($view);
+      $this->html .= new $widget($this->modelObject,$data);
     }
     return $this->html;
-  }
-
-  protected function table($data)
-  {
-    $rows = $this->modelObject->paginate();
-    // dd($rows->all());
-    return view('tabler.widgets.table',compact('data','rows'))->render();
-  }
-
-  protected function form($data)
-  {
-      $viewClass = [
-          'form-group' => 'form-group mb-3 row',
-          'label' => 'form-label col-3 col-form-label',
-          'field' => 'col',
-      ];
-      $fields = '';
-      foreach ($data['fields'] as $key => $field) {
-          $fields .= $this->{$field['front']}($field['label'],$field,$viewClass);
-      }
-      $data['fields'] = $fields;
-      return view('tabler.widgets.form',compact('data'))->render();
-  }
-
-  protected function input($label,$attributes,$viewClass,$prepend=0,$append=0)
-  {
-      $attributes = $this->formatAttributes($attributes);
-      return view('tabler.widgets.form.input',compact('label','attributes','viewClass','prepend','append'))->render();
-  }
-
-  protected function formatAttributes($attributes)
-  {
-      $html = [];
-
-      foreach ($attributes as $name => $value) {
-          $html[] = $name.'="'.e($value).'"';
-      }
-
-      return implode(' ', $html);
   }
 
 }

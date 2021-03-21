@@ -1,7 +1,7 @@
 <div class="col-12">
 <div class="card">
     <div class="card-header">
-    <h3 class="card-title">Invoices</h3>
+    <h3 class="card-title">{{ $data['title'] }}</h3>
     </div>
     <div class="card-body border-bottom py-3">
     <div class="d-flex">
@@ -9,7 +9,7 @@
         <div class="ms-auto text-muted">
         Search:
         <div class="ms-2 d-inline-block">
-            <input type="text" class="form-control form-control-sm" aria-label="Search invoice">
+            <input type="text" class="form-control form-control-sm" aria-label="Search ">
         </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
     <table class="table card-table table-vcenter text-nowrap datatable">
         <thead>
         <tr>
-        @foreach($data as $header)
+        @foreach($data['columns'] as $header)
             <th>{{ $header }}</th>
         @endforeach
             <th>Actions</th>
@@ -27,7 +27,7 @@
         <tbody>
         @foreach($rows->items() as $row)
         <tr>
-            @foreach($data as $col=>$label)
+            @foreach($data['columns'] as $col=>$label)
             <td>{{ $row->$col }}</td>
             @endforeach
             <td>
