@@ -1,2 +1,0 @@
-@section('app')
-@endsection

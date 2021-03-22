@@ -24,4 +24,13 @@ class Page extends Model
     return $this->html;
   }
 
+  public function pageCache()
+  {
+    $cacheKey = 'pages';
+    if (!cache()->has($cacheKey) || env('APP_DEBUG')) {
+        cache([$cacheKey => $this->all()], now()->addHours(1));
+    }
+    return cache($cacheKey);
+  }
+
 }

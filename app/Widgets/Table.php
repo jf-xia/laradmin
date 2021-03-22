@@ -16,7 +16,6 @@ class Table extends Widget
       $modelObject = $modelObject->where($data['searchField'],'like','%'.$search.'%');
     }
     $rows = $modelObject->paginate();
-    // dd($rows);
     $this->html = view('tabler.widgets.table',compact('data','rows'))->render();
   }
 
