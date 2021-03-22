@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\System;
 
 use App\Models\System\Page;
+use App\Widgets\Form;
+use App\Widgets\Table;
 use Laratrust\Helper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,12 +23,11 @@ class PageController
 
     public function index(Request $req)
     {
-        $page=Page::all();
-        // $page->title=5435;
-        // dd($page);
-        // $roles = Role::query()->paginate();
-        dd($page);
-        return view('tabler.layouts.page',compact('page'));
+        $page = new Page();
+        $rows = $page->paginate();
+        $page->title = 'Page';
+        $page->description = '';
+        return view('tabler.pages.index',compact('page','rows'));
     }
 
     public function create()
@@ -36,7 +37,7 @@ class PageController
 
     public function show(Request $request, $id)
     {
-        $page=Page::query()->firstWhere('url',$id);
+        $page=Page::query()->firstWhere('url','page/'.$id);
         return view('tabler.layouts.page',compact('page'));
     }
 
@@ -57,6 +58,11 @@ class PageController
 
     public function destroy($id)
     {
-        
+        try {
+            Page::findOrFail($id)->delete();
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+        return ['code'=>200];
     }
 }
