@@ -25,14 +25,17 @@ class PageController
     {
         $page = new Page();
         $rows = $page->paginate();
-        $page->title = 'Page';
+        $page->title = 'Page List';
         $page->description = '';
         return view('tabler.pages.index',compact('page','rows'));
     }
 
     public function create()
     {
-        
+        $page = new Page();
+        $page->title = 'Create Page';
+        $page->description = '';
+        return view('tabler.pages.create',compact('page'));
     }
 
     public function show(Request $request, $id)

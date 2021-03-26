@@ -14,13 +14,7 @@
 use App\Models\System\Page;
 
 Route::get('/', function () {
-    return view('admin.layouts.page',[
-        'title'=>'demo',
-        'header'=>'header',
-        'description'=>'description',
-        'content'=>'content',
-        'header'=>'header',
-        ]);
+    return '';
 });
 
 Route::resource('/page', 'System\PageController');

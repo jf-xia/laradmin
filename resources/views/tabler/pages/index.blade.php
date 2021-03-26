@@ -9,7 +9,7 @@
     </div>
     <div class="card-body border-bottom py-3">
     <div class="d-flex">
-        <a href="#" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modal-team">Create</a>
+        <a href="{{ route('page.create') }}" class="btn btn-success w-10" >Create</a>
         <!-- <div class="ms-auto text-muted">
         Search:
         <div class="ms-2 d-inline-block">
@@ -70,7 +70,22 @@
       <div class="modal-body">
         <form action="{!! url('page/store') !!}" method="POST">
             {{ csrf_field() }}
-            
+            <div class="mb-3">
+              <label class="form-label">Title</label>
+              <input type="text" class="form-control" name="title" placeholder="Input title">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" name="description" rows="6" placeholder="Description Content.." spellcheck="false"></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">URL</label>
+              <input type="text" class="form-control" name="url" placeholder="Input URL">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Model</label>
+              <input type="text" class="form-control" name="model" placeholder="Input Model">
+            </div>
             <div class="form-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
             </div>
