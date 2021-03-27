@@ -110,7 +110,10 @@
           <a href="#" class="dropdown-item">Feedback</a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">Settings</a> -->
-          <a href="#" class="dropdown-item">Logout</a>
+          <form id="logout" method="post" action="{{ route('logout') }}">
+                @csrf
+          <a href="javascript:document.getElementById('logout').submit();" class="dropdown-item">Logout</a>
+          </form>
         </div>
       </div>
     </div>

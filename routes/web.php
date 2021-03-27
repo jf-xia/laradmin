@@ -28,3 +28,5 @@ Route::resource('/role', 'Auth\RoleController');
 Route::resource('/permission', 'Auth\PermissionController');
 
 Route::get('/demo/form', 'DemoController@formDemo');
+
+Auth::routes();
