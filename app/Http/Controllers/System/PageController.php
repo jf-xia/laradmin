@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\System;
 
+use App\Http\Requests\PageRequest;
 use App\Models\System\Page;
 use App\Widgets\Form;
 use App\Widgets\Table;
@@ -38,23 +39,36 @@ class PageController
         return view('tabler.pages.create',compact('page'));
     }
 
-    public function show(Request $request, $id)
+    public function show($id)
     {
         $page=Page::query()->firstWhere('url','page/'.$id);
+        if (empty($page)) {
+            abort(404);
+        }
         return view('tabler.layouts.page',compact('page'));
     }
 
-    public function store(Request $request)
+    public function store(PageRequest $request)
     {
-        
+        try {
+            $page = Page::create($request->except(['_token']));
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+        session()->flash('admin-toastr', ['type'=>'success','message'=>'Page Create Success!']);
+        return redirect(route('page.index'));
     }
 
     public function edit($id)
     {
-        
+        $page = Page::find($id);
+        if (empty($page)) {
+            abort(404);
+        }
+        return view('tabler.pages.edit',compact('page'));
     }
 
-    public function update(Request $request, $id)
+    public function update(PageRequest $request, $id)
     {
         
     }

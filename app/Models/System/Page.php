@@ -33,4 +33,9 @@ class Page extends Model
     return cache($cacheKey);
   }
 
+  // public function setTemplateAttribute($template)
+  // {
+  //   $this->attributes['template'] = ($template);//json_decode
+  // }
+
 }

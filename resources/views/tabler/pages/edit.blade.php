@@ -11,25 +11,25 @@
           <div class="col-md-4">
             <div class="mb-3">
               <label class="form-label">Title</label>
-              <input type="text" class="form-control" name="title" placeholder="Input title">
+              <input type="text" value="{{ $page->title }}" class="form-control" name="title" placeholder="Input title">
             </div>
           </div>
           <div class="col-md-4">
             <div class="mb-3">
               <label class="form-label">URL</label>
-              <input type="text" class="form-control" name="url" placeholder="Input URL">
+              <input type="text" value="{{ $page->url }}" class="form-control" name="url" placeholder="Input URL">
             </div>
           </div>
           <div class="col-md-4">
             <div class="mb-3">
               <label class="form-label">Model</label>
-              <input type="text" class="form-control" name="model" placeholder="Input Model">
+              <input type="text" value="{{ $page->model }}" class="form-control" name="model" placeholder="Input Model">
             </div>
           </div>
           </div>
           <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea class="form-control" name="description" rows="3" placeholder="Description Content.." spellcheck="false"></textarea>
+            <textarea class="form-control" name="description" rows="3" placeholder="Description Content.." spellcheck="false">{{ $page->description }}</textarea>
           </div>
           <div class="mb-3">
             <label class="form-label">Template</label>
@@ -51,7 +51,7 @@
 <script>
 
 const containerField = document.getElementById('template')
-const json = {}
+const json = {!! json_encode($page->template) !!}
 
 const schema = {
   "title": "PageTemplate",

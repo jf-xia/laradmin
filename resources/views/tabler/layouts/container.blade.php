@@ -42,7 +42,6 @@
         <div class="content-body" id="app">
           @include('tabler.partials.alerts')
           @yield("page")
-          @include('tabler.partials.toastr')
         </div>
       </div>
       <footer class="footer footer-transparent d-print-none">
@@ -74,6 +73,7 @@
   </div>
   <!-- Tabler Core -->
   <script src="/dist/js/jquery-3.5.1.min.js"></script>
+  @include('tabler.partials.toastr')
   <script src="/dist/js/tabler.min.js"></script>
   @yield("js")
 </body>
