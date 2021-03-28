@@ -26,8 +26,8 @@ class PageController
     {
         $page = new Page();
         $rows = $page->paginate();
-        $page->title = 'Page List';
-        $page->description = '';
+        $page->title = 'Page';
+        $page->description = ' - Auto Generate Admin Pages, Form, Grid, Meun, etc.';
         return view('tabler.pages.index',compact('page','rows'));
     }
 
@@ -70,8 +70,10 @@ class PageController
 
     public function update(PageRequest $request, $id)
     {
+        $data = $request->except(['_token','_method']);
+        $data['template'] = json_decode($data['template'],true);
         try {
-            $page = Page::find($id)->update($request->except(['_token']));
+            $page = Page::find($id)->update($data);
         } catch (\Throwable $th) {
             throw $th;
         }

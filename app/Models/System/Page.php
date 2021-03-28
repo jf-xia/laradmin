@@ -35,7 +35,12 @@ class Page extends Model
 
   // public function setTemplateAttribute($template)
   // {
-  //   $this->attributes['template'] = ($template);//json_decode
+
+  //   if (!is_array($template)){
+  //     $this->attributes['template'] = json_decode(trim($template,chr(239).chr(187).chr(191)),true);
+  //   // } else {
+  //   //   $this->attributes['template'] = json_decode(json_encode($template));
+  //   }
   // }
 
 }

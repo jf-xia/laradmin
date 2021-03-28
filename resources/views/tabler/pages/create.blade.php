@@ -117,7 +117,7 @@ const options = {
     // if(!isNaN(json.age) && json.age < 30) {
     //   errors.push({ path: ['age'], message: 'Member age must be 30 or higher' });
     // }
-    containerField.value=JSON.stringify(json).replace(/\"/g,"'");
+    containerField.value=JSON.stringify(json);//.replace(/\"/g,"'")
     return errors;
   },
   templates: [
