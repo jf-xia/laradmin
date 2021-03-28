@@ -6,7 +6,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="{!! $data['action'] !!}" method="POST">
+            <form action="{!! url($data['action']) !!}" method="POST">
                 {{ csrf_field() }}
                 {!! $data['fields'] !!}
                 <div class="form-footer">

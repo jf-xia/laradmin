@@ -18,9 +18,12 @@ Route::get('/', function () {
 });
 
 Route::resource('/page', 'System\PageController');
-foreach (Page::all() as $key => $page) {
-    Route::resource('/model/'.$page->url, 'System\ModelController');
-    Route::get('/search/'.$page->url, 'System\ModelController@search');
+foreach (Page::all(['url']) as $key => $page) {
+    $key = explode('/',$page->url);
+    if (isset($key[0]) && isset($key[1]) && $key[0] == 'page') {
+        Route::resource('model/'.$key[1], 'System\ModelController');
+        Route::get('search/'.$key[1], 'System\ModelController@search');
+    }
 }
 
 Route::resource('/user', 'Auth\UserController');
