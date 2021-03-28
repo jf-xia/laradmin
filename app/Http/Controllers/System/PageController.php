@@ -70,7 +70,13 @@ class PageController
 
     public function update(PageRequest $request, $id)
     {
-        
+        try {
+            $page = Page::find($id)->update($request->except(['_token']));
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+        session()->flash('admin-toastr', ['type'=>'success','message'=>'Page Update Success!']);
+        return redirect(route('page.index'));
     }
 
     public function destroy($id)

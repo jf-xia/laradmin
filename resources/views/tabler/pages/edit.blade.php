@@ -5,7 +5,8 @@
 <div class="col-12">
   <div class="card">
       <div class="card-body border-bottom py-3">
-        <form action="{!! route('page.store') !!}" method="POST">
+        <form action="{!! route('page.update',$page->id) !!}" method="POST">
+          {{ method_field('PUT') }}
           {{ csrf_field() }}
           <div class="row">
           <div class="col-md-4">
