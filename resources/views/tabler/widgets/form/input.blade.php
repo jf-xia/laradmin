@@ -6,7 +6,7 @@
 
     <div class="{{$viewClass['field']}}">
 
-        @include('tabler.widgets.form.error')
+        <!-- include('tabler.widgets.form.error') -->
 
 
         @if ($prepend)

@@ -1,1 +1,0 @@
-file uploader by Cloud Object Storage (tencent or aliyun)

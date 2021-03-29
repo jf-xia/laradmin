@@ -16,7 +16,7 @@ class Model extends Eloquent
    */
   protected $table;
   protected $guarded = [];
-  protected $casts = [];//'template'=>'json'
+  protected $casts = [];
 
   /**
    * Create a new Eloquent model instance by table name.

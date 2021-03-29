@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -29,6 +30,7 @@ class ModelController
      */
     public function store(Request $request)
     {
+        //TODO validate
         // $request->validate([
         //     $key => 'image|mimes:jpeg, png, jpg, doc, docx, xls, xlsx, ppt, pptx|max:15120'
         // ]);
@@ -44,7 +46,7 @@ class ModelController
             session()->flash('admin-toastr', ['type'=>'success','message'=>$this->modelName.' Create Success!']);
         } catch (\Throwable $th) {
             session()->flash('admin-toastr', ['type'=>'error','message'=>$this->modelName.' Create Failed!']);
-            // throw $th;
+            Log::error('model store',[$th]);
         }
         return redirect()->back();
     }
@@ -69,32 +71,24 @@ class ModelController
         return 'https://'.$result->offsetGet('Location');
     }
 
-    public function update(Request $request, $id)
-    {
-        try {
-            $update = $this->model->query()->findOrFail($id);
-            foreach ($request->except(['_token']) as $key => $value) {
-                $update->$key = $value;
-            }
-            $update->save();
-        } catch (\Throwable $th) {
-            throw $th;
-        }
-        return redirect()->back();
-    }
-
     public function destroy($id)
     {
         try {
             $this->model->findOrFail($id)->delete();
         } catch (\Throwable $th) {
-            throw $th;
+            Log::error('model destroy',[$th]);
+            return ['code'=>500];
         }
         return ['code'=>200];
     }
 
     // TODO edit
     // public function edit($id)
+    // {
+        
+    // }
+
+    // public function update(Request $request, $id)
     // {
         
     // }
