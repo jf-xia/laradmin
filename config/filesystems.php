@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'www'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,10 +48,17 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'www' => [
+            'driver' => 'local',
+            'root' => base_path('public'),
+            'url' => '/',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => base_path('public'),
+            'url' => '/',
             'visibility' => 'public',
         ],
 
@@ -63,6 +70,21 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
+        ],
+        //腾讯云存储
+        'qcloud-cos' => [
+            'driver' => 'qcloud-cos',
+            'region' => env('COS_REGION', 'cd-chengdu'),
+            'schema' => env('COS_SCHEME','https'),
+            'credentials' => [
+                'appId' =>  env('COS_APPID'),
+                'secretId' =>  env('COS_SECRET_ID'),
+                'secretKey' => env('COS_SECRET_KEY'),
+                'token' => env('QCLOUD_COS_TOKEN', null)
+            ],
+            'default_bucket' =>  env('COS_BUCKET'),
+            'timeout' => env('QCLOUD_COS_TIMEOUT', 3600),
+            'connect_timeout' =>  env('QCLOUD_COS_CONNECT_TIMEOUT', 3600)
         ],
 
     ],

@@ -50,6 +50,7 @@ class PageController
 
     public function store(PageRequest $request)
     {
+        //TODO validation
         try {
             $page = Page::create($request->except(['_token']));
         } catch (\Throwable $th) {

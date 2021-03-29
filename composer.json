@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
+        "qcloud/cos-sdk-v5": "^2.1",
         "santigarcor/laratrust": "^6.3"
     },
     "require-dev": {
