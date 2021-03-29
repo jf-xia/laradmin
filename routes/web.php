@@ -25,7 +25,6 @@ foreach (Page::all(['url']) as $key => $page) {
         Route::get('search/'.$key[1], 'System\ModelController@search');
     }
 }
-Route::any('/uploadfile', 'Api\TencentCosController@ajaxUploadFile')->name('uploadfile');
 
 Route::resource('/user', 'Auth\UserController');
 Route::resource('/role', 'Auth\RoleController');
