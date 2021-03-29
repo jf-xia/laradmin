@@ -74,9 +74,3 @@ https://github.com/jf-xia/laradmin/commit/da52ec87e8d40fed39b7b64bc3227956131181
 
 GitHub committed Log:
 https://github.com/jf-xia/laradmin/commit/b1c8ee7540a96a0fba37cc2ddfee20a5cd8ee19d
-
-List of work done by the individual
-System design of each  implemented
-Module description with relevant screenshots 
-Programfiles developed, and a brief descriptions of their purposes
-Any other useful information
