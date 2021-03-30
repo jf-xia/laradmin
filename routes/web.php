@@ -12,24 +12,28 @@
 */
 
 use App\Models\System\Page;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return '';
+    return redirect()->route('page.index');
 });
 
-Route::resource('/page', 'System\PageController');
-foreach (Page::all(['url']) as $key => $page) {
-    $key = explode('/',$page->url);
-    if (isset($key[0]) && isset($key[1]) && $key[0] == 'page') {
-        Route::resource('model/'.$key[1], 'System\ModelController');
-        Route::get('search/'.$key[1], 'System\ModelController@search');
+Route::group([
+    'middleware' => 'auth'
+], function ($router) {
+    $router->resource('/page', 'System\PageController');
+    foreach (Page::all(['url']) as $key => $page) {
+        $key = explode('/',$page->url);
+        if (isset($key[0]) && isset($key[1]) && $key[0] == 'page') {
+            $router->resource('model/'.$key[1], 'System\ModelController');
+            $router->get('search/'.$key[1], 'System\ModelController@search');
+        }
     }
-}
-
-Route::resource('/user', 'Auth\UserController');
-Route::resource('/role', 'Auth\RoleController');
-Route::resource('/permission', 'Auth\PermissionController');
-
-Route::get('/demo/form', 'DemoController@formDemo');
+    
+    $router->resource('/user', 'Auth\UserController');
+    $router->resource('/role', 'Auth\RoleController');
+    $router->resource('/permission', 'Auth\PermissionController');
+    
+});
 
 Auth::routes();
