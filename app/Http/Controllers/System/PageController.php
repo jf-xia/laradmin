@@ -50,8 +50,10 @@ class PageController
     public function store(PageRequest $request)
     {
         //TODO validation
+        $data = $request->except(['_token']);
+        $data['template'] = json_decode($data['template'],true);
         try {
-            $page = Page::create($request->except(['_token']));
+            $page = Page::create($data);
         } catch (\Throwable $th) {
             throw $th;
         }

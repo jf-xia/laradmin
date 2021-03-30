@@ -16,7 +16,12 @@ class Page extends Model
 
   public function html()
   {
-    $this->modelObject = new $this->model();
+    $modelN = explode('|',$this->model);
+    if (isset($modelN[1])) {
+        $this->modelObject = new $modelN[0]($modelN[1]);
+    } else {
+        $this->modelObject = new $modelN[0]();
+    }
     foreach ($this->template as $view=>$data) {
       $widget = "App\\Widgets\\".ucfirst($view);
       $this->html .= new $widget($this->modelObject,$data);

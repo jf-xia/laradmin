@@ -9,6 +9,36 @@ Inspired by [laravel-admin](https://laravel-admin.org/docs/en/).
 GitHub committed Logs List:
 https://github.com/jf-xia/laradmin/commits/main
 
+## A Sample Usage Scenario
+
+1. A user Jack registers a new account.
+2. Jack logs in with his email and password.
+3. Admin user can attach a admin role to the user Jack
+4. Jack can access Page and RBAC Management after he got admin role
+5. Jack create a new table tasks by phpMyAdmin
+   1. `id` int unsigned NOT NULL AUTO_INCREMENT,
+   2. `title` varchar(255),
+   3. `start_at` datetime,
+   4. `end_at` datetime,
+   5. `created_at` timestamp,
+   6. `updated_at` timestamp,
+   7. `deleted_at` timestamp,
+6. Jack Create a new Page "Task" by fill some fields
+   1. Title: Task
+   2. URL: page/tasks
+   3. 
+7. “I plan to visit Tokyo Disneyland with my family”, start date “April 1, 2021”, end date “April 6, 2021”. 
+8. He applies two tags to his idea: “Tokyo”, and “Disneyland”.
+9.  After the travel idea creation, a mash-up widget on the right is automatically created and linked to Hotwire Hotel Deal,querying the hotelinformation based on the “Tokyo”tag as city name (again, you may propose to use a web API other than Hotwire Hotel Deal if you wish; but if you use the Hotwire API, please register a new developer account and avoid to use the following API key of 6e8zytkk8d3mdrksyqhqf3x3):http://api.hotwire.com/v1/deal/hotel?apikey=6e8zytkk8d3mdrksyqhqf3x3&limit=10&dest=TokyoBen can read the summary in the widget and click on the provided links to get further information.
+10. Another mash-up widget is updated at the same time to provide some other additional information about Ben’s planned trip.
+11. He posts a new comment “Can anyone suggest where to find weather forecast?” on his travel idea to ask for help from his friends.
+12. His friend Karen who has already registered logs in.
+13. Karen searches the site by the tag “Disneyland” and finds that Ben already posted a travel idea with this tag.
+14. Karen clicks on Ben’s travel idea and views the comments.
+15. She posts a comment with a link “you can go to https://www.weather-forecast.com/locations/Tokyo-1/forecasts/latestto check the weather!”.
+16. Concurrently, Ben and Karen get the comments as they are viewing the same travel idea.
+17. They may continue “chatting” on the same travel idea page.
+
 ## Module 1: Login and Register by Tabler Template
 
 1. Setup mysql database, and Run php artisan migrate and php artisan make:auth.
