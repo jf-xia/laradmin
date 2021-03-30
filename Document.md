@@ -13,7 +13,7 @@ https://github.com/jf-xia/laradmin/commits/main
 
 1. A user Jack registers a new account.
 2. Jack logs in with his email and password.
-3. Admin user can attach a admin role to the user Jack
+3. Admin user can attach a admin role to the user Jack ![rbac](doc/rbac.png)
 4. Jack can access Page and RBAC Management after he got admin role
 5. Jack create a new table tasks by phpMyAdmin
    1. `id` int unsigned NOT NULL AUTO_INCREMENT,
