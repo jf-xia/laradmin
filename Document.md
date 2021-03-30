@@ -2,7 +2,9 @@
 
 LarAdmin - A laravel administrative interface that can help you build a CRUD backend with low/no-code. 
 
-Inspired by [laravel-admin](https://laravel-admin.org/docs/en/), Laradmin can generate pages, forms and grid by json data, and can be easier to develop a custom CRUD backend pages using a json editor.
+Laradmin can generate pages, forms and grid by json data, and can be easier to develop a custom CRUD backend pages using a json editor.
+
+Inspired by [laravel-admin](https://laravel-admin.org/docs/en/).
 
 GitHub committed Logs List:
 https://github.com/jf-xia/laradmin/commits/main
@@ -70,7 +72,7 @@ https://github.com/jf-xia/laradmin/commit/94d2e6e0f808a540500367ed47242f14a0a9c3
 1. Install Laratrust: composer require santigarcor/laratrust.
 2. Publish and Edit the configuration file: php artisan vendor:publish --tag="laratrust".
 3. Run php artisan laratrust:setup and php artisan migrate.
-4. Edit sidebar.blade.php, PageRequest and PageController, that only user who is admin role can see and edit pages.
+4. Edit sidebar.blade.php, PageRequest and PageController, that only user who has admin role can see and edit pages.
 
 GitHub committed Log:
 https://github.com/jf-xia/laradmin/commit/da52ec87e8d40fed39b7b64bc322795613118197
