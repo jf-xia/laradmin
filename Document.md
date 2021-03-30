@@ -33,8 +33,8 @@ https://github.com/jf-xia/laradmin/commits/main
 10. Jack can delete any tasks on http(s)://domain/page/tasks
 11. Jack can search tasks by title on http(s)://domain/page/tasks
 12. Jack can develop a new field widget.
-    1.  create select.blade.php in view/tabler/widgets/form, include HTML, CSS, and JS
-    2.  add a new select(...) function in app/Widgets/Form.php
+    1.  create date.blade.php in view/tabler/widgets/form, include HTML, CSS, and JS
+    2.  add a new date(...) function in app/Widgets/Form.php
 13. Jack can develop a new page widget by create a new Class in app/Widgets, and JSON template in page view files(create and edit).
 
 ## Module 1: Login and Register by Tabler Template
