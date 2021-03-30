@@ -23,6 +23,10 @@
     <link href="/dist/css/tabler-payments.min.css" rel="stylesheet"/>
     <link href="/dist/css/tabler-vendors.min.css" rel="stylesheet"/>
     <link href="/dist/css/demo.min.css" rel="stylesheet"/>
+    <!-- Tabler Core -->
+    <script src="/dist/js/jquery-3.5.1.min.js"></script>
+    <script src="/dist/js/tabler.min.js"></script>
+    <script src="/dist/libs/litepicker/dist/litepicker.js"></script>
 </head>
 
 <body class="antialiased">
@@ -71,10 +75,8 @@
       </footer>
     </div>
   </div>
-  <!-- Tabler Core -->
-  <script src="/dist/js/jquery-3.5.1.min.js"></script>
   @include('tabler.partials.toastr')
-  <script src="/dist/js/tabler.min.js"></script>
   @yield("js")
+  @yield("jsDelete")
 </body>
 </html>

@@ -60,7 +60,7 @@
 </div>
 </div>
 
-@section("js")
+@section("jsDelete")
     
 <script>
 // $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });

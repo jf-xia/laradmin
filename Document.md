@@ -19,25 +19,23 @@ https://github.com/jf-xia/laradmin/commits/main
    1. `id` int unsigned NOT NULL AUTO_INCREMENT,
    2. `title` varchar(255),
    3. `start_at` datetime,
-   4. `end_at` datetime,
-   5. `created_at` timestamp,
-   6. `updated_at` timestamp,
-   7. `deleted_at` timestamp,
-6. Jack Create a new Page "Task" by fill some fields
-   1. Title: Task
+   4. `created_at` timestamp,
+   5. `updated_at` timestamp,
+   6. `deleted_at` timestamp,
+6. Jack Create a new Page "Task" by fill some fields, validation error will display if title and url are empty.
+   1. Title: Task Management
    2. URL: page/tasks
-   3. 
-7. “I plan to visit Tokyo Disneyland with my family”, start date “April 1, 2021”, end date “April 6, 2021”. 
-8. He applies two tags to his idea: “Tokyo”, and “Disneyland”.
-9.  After the travel idea creation, a mash-up widget on the right is automatically created and linked to Hotwire Hotel Deal,querying the hotelinformation based on the “Tokyo”tag as city name (again, you may propose to use a web API other than Hotwire Hotel Deal if you wish; but if you use the Hotwire API, please register a new developer account and avoid to use the following API key of 6e8zytkk8d3mdrksyqhqf3x3):http://api.hotwire.com/v1/deal/hotel?apikey=6e8zytkk8d3mdrksyqhqf3x3&limit=10&dest=TokyoBen can read the summary in the widget and click on the provided links to get further information.
-10. Another mash-up widget is updated at the same time to provide some other additional information about Ben’s planned trip.
-11. He posts a new comment “Can anyone suggest where to find weather forecast?” on his travel idea to ask for help from his friends.
-12. His friend Karen who has already registered logs in.
-13. Karen searches the site by the tag “Disneyland” and finds that Ben already posted a travel idea with this tag.
-14. Karen clicks on Ben’s travel idea and views the comments.
-15. She posts a comment with a link “you can go to https://www.weather-forecast.com/locations/Tokyo-1/forecasts/latestto check the weather!”.
-16. Concurrently, Ben and Karen get the comments as they are viewing the same travel idea.
-17. They may continue “chatting” on the same travel idea page.
+   3. Model: App\Models\System\Model|tasks
+   4. Template: {"form":{"title":"Create Task","action":"model/tasks","fields":[{"id":"title","name":"title","type":"text","class":"form-control","front":"input","label":"Title","placeholder":"Title"},{"id":"start_at","name":"start_at","type":"text","class":"form-control","front":"date","label":"Start At","placeholder":"Start At"}],"viewClass":{"field":"col","label":"form-label col-3 col-form-label","form-group":"form-group mb-3 row"},"subTemplate":"1"},"table":{"title":"Task List","delete":"model/tasks","columns":{"id":"ID","title":"Title","end_at":"End At","start_at":"Start At","created_at":"Create At","updated_at":"Updated At"},"searchField":"title"}}
+7. Jack posted a task “I plan to visit Tokyo Disneyland with my family” with start date “2021-11-11”. 
+8. Jack can edit the task table and page, for example, add a new map location field.
+9.  Jack can find all the posted tasks on http(s)://domain/page/tasks
+10. Jack can delete any tasks on http(s)://domain/page/tasks
+11. Jack can search tasks by title on http(s)://domain/page/tasks
+12. Jack can develop a new field widget.
+    1.  create select.blade.php in view/tabler/widgets/form, include HTML, CSS, and JS
+    2.  add a new select(...) function in app/Widgets/Form.php
+13. Jack can develop a new page widget by create a new Class in app/Widgets, and JSON template in page view files(create and edit).
 
 ## Module 1: Login and Register by Tabler Template
 
