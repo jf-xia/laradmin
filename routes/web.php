@@ -15,12 +15,13 @@ use App\Models\System\Page;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect()->route('page.index');
+    return redirect(url('page/users'));
 });
 
 Route::group([
     'middleware' => 'auth'
 ], function ($router) {
+    // $router->group(['middleware' => ['role:admin']], function($router) {});
     $router->resource('/page', 'System\PageController');
     foreach (Page::all(['url']) as $key => $page) {
         $key = explode('/',$page->url);

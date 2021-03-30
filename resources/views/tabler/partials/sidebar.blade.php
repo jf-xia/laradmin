@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <h1 class="navbar-brand navbar-brand-autodark">
-      <a href=".">
+      <a href="/">
         <img src="/logo.png" width="110" height="32" alt="LarAdmin" class="navbar-brand-image">
       </a>
     </h1>
@@ -105,14 +105,18 @@
           </div> -->
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-          <!-- <a href="#" class="dropdown-item">Set status</a>
-          <a href="#" class="dropdown-item">Profile & account</a>
-          <a href="#" class="dropdown-item">Feedback</a>
+          <?php $user = \Auth::user(); ?>
+          <div class="dropdown-item"><span >Hi, {{ $user->name }}</span></div>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">Settings</a> -->
+          @if($user->hasRole('admin'))
+          <a href="{{ url('laratrust') }}" class="dropdown-item">RBAC Laratrust Panel</a>
+          <a href="{{ route('page.index') }}" class="dropdown-item">Page Management</a>
+          @endif
+          <!-- <div class="dropdown-divider"></div> -->
+          <!-- <a href="#" class="dropdown-item">Settings</a> -->
           <form id="logout" method="post" action="{{ route('logout') }}">
-                @csrf
-          <a href="javascript:document.getElementById('logout').submit();" class="dropdown-item">Logout</a>
+            @csrf
+            <a href="javascript:document.getElementById('logout').submit();" class="dropdown-item">Logout</a>
           </form>
         </div>
       </div>

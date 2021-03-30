@@ -17,13 +17,12 @@ use Illuminate\Support\Facades\Session;
 class PageController
 {
 
-    public function __construct()
-    {
-        
-    }
-
     public function index(Request $req)
     {
+        $user = \Auth::user();
+        if (!$user->hasRole('admin')) {
+            abort(403);
+        }
         $page = new Page();
         $rows = $page->paginate();
         $page->title = 'Page';
@@ -84,6 +83,10 @@ class PageController
 
     public function destroy($id)
     {
+        $user = \Auth::user();
+        if (!$user->hasRole('admin')) {
+            abort(403);
+        }
         try {
             Page::findOrFail($id)->delete();
         } catch (\Throwable $th) {

@@ -13,7 +13,10 @@ class PageRequest extends FormRequest
      */
     public function authorize()
     {
-        // TODO authorize
+        $user = \Auth::user();
+        if (!$user->hasRole('admin')) {
+            return false;
+        }
         return true;
     }
 
