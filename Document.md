@@ -13,7 +13,7 @@ https://github.com/jf-xia/laradmin/commits/main
 
 1. A user Jack registers a new account.
 2. Jack logs in with his email and password.
-3. Admin user can attach a admin role to the user Jack ![rbac](doc/rbac.png)
+3. Admin user (Account: admin@admin.com; Password: 11111111) can attach a admin role to the user Jack ![rbac](doc/rbac.png)
 4. Jack can access Page and RBAC Management after he got admin role
 5. Jack create a new table tasks by phpMyAdmin
    1. `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -102,10 +102,12 @@ https://github.com/jf-xia/laradmin/commit/94d2e6e0f808a540500367ed47242f14a0a9c3
 3. Run php artisan laratrust:setup and php artisan migrate.
 4. Edit sidebar.blade.php, PageRequest and PageController, that only user who has admin role can see and edit pages.
 
+![Laratrust](doc/laratrust.png)
+
 GitHub committed Log:
 https://github.com/jf-xia/laradmin/commit/da52ec87e8d40fed39b7b64bc322795613118197
 
-## Module 5: Tencent Cloud COS API for File Upload
+## Module 5: Tencent Cloud COS API for File Upload Field Widget
 
 1. Install Tencent Cloud COS SDK: composer require qcloud/cos-sdk-v5.
 2. Register Tencent Cloud account and apply the configuration in config/filesystems.php and .env (COS_BUCKET, COS_SECRET_ID, COS_SECRET_KEY, etc.).
@@ -114,5 +116,20 @@ https://github.com/jf-xia/laradmin/commit/da52ec87e8d40fed39b7b64bc3227956131181
 5. Edit table.blade.php and JSON "table":{} to show the file or image.
 6. Edit User's JSON Template, Add a field {"name": "avatar", "type": "file", "front": "input", "label": "Avatar"} in "form":{"fields":[]} to show the file upload field.
 
+![File Upload Field Widget](doc/fileupload.png)
+
 GitHub committed Log:
 https://github.com/jf-xia/laradmin/commit/b1c8ee7540a96a0fba37cc2ddfee20a5cd8ee19d
+
+## Module 6: Create Translate Field Widget: Tencent Cloud TextTranslate API
+
+1. Install Tencent Cloud SDK: composer require tencentcloud/tencentcloud-sdk-php.
+2. Register Tencent Cloud account and apply the configuration in .env (TTT_SECRET_ID, TTT_SECRET_KEY).
+3. Add textTranslate() function to TencentController file and router to request Tencent Cloud TextTranslate API.
+4. Create resources/views/tabler/widgets/form/translate.blade.php and edit app/Widgets/Form.php to build the translate field widget.
+5. Edit Task's JSON Template, edit a field {"id": "title", "name": "title", "type": "text", "front": "translate", "label": "title"} in "form":{"fields":[]} to show the translate field.
+
+![Translate Field Widget](doc/translate.png)
+
+GitHub committed Log:
+

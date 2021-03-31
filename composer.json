@@ -14,7 +14,8 @@
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
         "qcloud/cos-sdk-v5": "^2.1",
-        "santigarcor/laratrust": "^6.3"
+        "santigarcor/laratrust": "^6.3",
+        "tencentcloud/tencentcloud-sdk-php": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",

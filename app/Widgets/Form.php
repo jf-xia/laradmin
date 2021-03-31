@@ -32,6 +32,13 @@ class Form extends Widget
     return view('tabler.widgets.form.date',compact('id','label','attributes','viewClass','prepend','append'))->render();
   }
 
+  protected function translate($label,$attributes,$viewClass,$prepend=0,$append=0)
+  {
+    $id = $attributes['id'];
+    $attributes = $this->formatAttributes($attributes);
+    return view('tabler.widgets.form.translate',compact('id','label','attributes','viewClass','prepend','append'))->render();
+  }
+
   protected function formatAttributes($attributes)
   {
       $html = [];
