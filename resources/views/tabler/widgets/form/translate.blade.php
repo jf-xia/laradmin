@@ -30,21 +30,25 @@
 
 $(document).ready(function () {
   $(".translate").click(function() {
-    $.ajax({
-        type: 'POST',
-        url: "{{ url('/api/tencent/textTranslate') }}",
-        data: {"_token":"{{ csrf_token() }}","text":$("#{{ $id }}").val(),"target":this.dataset.id},
-        success: function(data) {
-            if (data.code==500) {
-                console.log(data);
-                alert("API 500 Error");
-            } else if (data.TargetText) {
-                $("#{{ $id }}").val(data.TargetText);
-            } else {
-                alert("Unkown Error");
+    if ($("#{{ $id }}").val()) {
+        $.ajax({
+            type: 'POST',
+            url: "{{ url('/api/tencent/textTranslate') }}",
+            data: {"_token":"{{ csrf_token() }}","text":$("#{{ $id }}").val(),"target":this.dataset.id},
+            success: function(data) {
+                if (data.code==500) {
+                    console.log(data);
+                    alert("API 500 Error");
+                } else if (data.TargetText) {
+                    $("#{{ $id }}").val(data.TargetText);
+                } else {
+                    alert("Unkown Error");
+                }
             }
-        }
-    });
+        });
+    } else {
+        alert("Field cannot be empty");
+    }
   });
 });
 </script>
