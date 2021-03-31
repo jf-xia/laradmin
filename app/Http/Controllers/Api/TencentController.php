@@ -37,12 +37,12 @@ class TencentController
         
             $resp = $client->TextTranslate($req);
         
-            return json_decode($resp->toJsonString(),true);
+            return response()->json(json_decode($resp->toJsonString(),true));
         }
         catch(TencentCloudSDKException $e) {
             Log::error(request()->all());
             Log::error($e);
-            return ['code'=>500];
+            return response()->json(['code'=>500]);
         }
         
     }

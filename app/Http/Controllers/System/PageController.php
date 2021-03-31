@@ -94,6 +94,6 @@ class PageController
         } catch (\Throwable $th) {
             throw $th;
         }
-        return ['code'=>200];
+        return response()->json(['code'=>200]);
     }
 }
