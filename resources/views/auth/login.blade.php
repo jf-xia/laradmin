@@ -66,7 +66,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col"><a href="https://moodle.hku.hk/" class="btn btn-white w-100">
-               <img src="{{url('/dist/img/hku.jpg')}}"  alt="Image" width="24" height="24"  /> 
+               <img src="/hku.jpg"  alt="Image" width="24" height="24"  /> 
                    Login with your HKU account
                 </a></div>
             </div>
