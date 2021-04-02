@@ -156,6 +156,9 @@
                             <div class="row">
                                 <label for="Created" class="col-sm-4 control-label"><b>Account Created at :</b> <br> <span class="font-weight-bolder">{{auth::user()->created_at }}</span></br></label>
                             </div>
+                            <div class="row">
+                                <label for="Role" class="col-sm-4 control-label"><b>Last Update :</b> <br> <span class="font-weight-bolder">{{auth::user()->updated_at }}</span></br></label>
+                            </div>
           </div>
           </div>
           <div class="modal-footer">
