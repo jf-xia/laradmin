@@ -108,6 +108,7 @@
           <?php $user = \Auth::user(); ?>
           <div class="dropdown-item"><span >Hi, {{ $user->name }}</span></div>
           <div class="dropdown-divider"></div>
+          <a herf="#!" class = "dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-simple">Profile</a>
           @if($user->hasRole('admin'))
           <a href="{{ url('laratrust') }}" class="dropdown-item">RBAC Laratrust Panel</a>
           <a href="{{ route('page.index') }}" class="dropdown-item">Page Management</a>
@@ -134,4 +135,34 @@
       </div> -->
     </div>
   </div>
+  <div class="modal modal-blur fade" id="modal-simple" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Profile</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <div class="form-group col">
+                            <div class="row">
+                                <label for="Name" class="col-sm-4 control-label"><b>Name :</b> <br> <span class="font-weight-bolder">{{auth::user()->name }}</span></br></label>
+                            </div>
+                            <div class="row">
+                                <label for="Email" class="col-sm-4 control-label"><b>Email :</b> <br> <span class="font-weight-bolder">{{auth::user()->email }}</span></br></label>
+                            </div>
+                            <div class="row">
+                                <label for="Created" class="col-sm-4 control-label"><b>Account Created at :</b> <br> <span class="font-weight-bolder">{{auth::user()->created_at }}</span></br></label>
+                            </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>   
+
+
+  
+
 </header>
