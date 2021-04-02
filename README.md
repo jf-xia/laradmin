@@ -58,6 +58,7 @@ Laravel = 6.20
 - [Composer] (https://getcomposer.org/)
 - [MySQL] (https://mysql.com)
 - [NPM] (https://www.npmjs.com/)
+- [Chart.js] (https://www.chartjs.org/)
 
 ## Open API
 - [Google Map] (http://Google.com)
