@@ -109,10 +109,13 @@
           <div class="dropdown-item"><span >Hi, {{ $user->name }}</span></div>
           <div class="dropdown-divider"></div>
           <a herf="#!" class = "dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-simple">Profile</a>
+        
           @if($user->hasRole('admin'))
           <a href="{{ url('laratrust') }}" class="dropdown-item">RBAC Laratrust Panel</a>
           <a href="{{ route('page.index') }}" class="dropdown-item">Page Management</a>
           @endif
+
+          <a href="{{ route('report.index') }}" class="dropdown-item">Dashboard</a>
           <!-- <div class="dropdown-divider"></div> -->
           <!-- <a href="#" class="dropdown-item">Settings</a> -->
           <form id="logout" method="post" action="{{ route('logout') }}">

@@ -36,6 +36,7 @@ Route::group([
     $router->resource('/user', 'Auth\UserController');
     $router->resource('/role', 'Auth\RoleController');
     $router->resource('/permission', 'Auth\PermissionController');
+    $router->resource('/report','DashController');
     
 });
 
