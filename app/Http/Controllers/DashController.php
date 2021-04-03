@@ -29,7 +29,7 @@ class DashController
         $rolecount = DB::table('roles')->count();
     
         $users = DB::table('users')->select(DB::raw('*'))
-              ->whereRaw('Date(created_at) = CURDATE()')->get();
+              ->whereRaw('Date(created_at) = CURDATE()')->count();
         
 
         return view('tabler.reports.index',compact('page','usercount','taskcount','rolecount','users'));
