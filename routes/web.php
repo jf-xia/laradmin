@@ -15,7 +15,7 @@ use App\Models\System\Page;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return redirect(url('page/users'));
+    return redirect(url('page/customer'));
 });
 
 Route::group([

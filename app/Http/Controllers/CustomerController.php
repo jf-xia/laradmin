@@ -65,4 +65,19 @@ class CustomerController
         }
         return redirect(route('customer.edit',['customer'=>$customer->id]));
     }
+
+    public function destroy($id)
+    {
+        try {
+            $customer = Customer::findOrFail($id);
+            if ($customer->user_id != Auth::id()) {
+                return response()->json(['code'=>401,'msg'=>'Unauthorized! This Customer is not belong to you.']);
+            }
+            $customer->delete();
+        } catch (\Throwable $th) {
+            Log::error('model destroy',[$th]);
+            return response()->json(['code'=>500,'msg'=>'Server Error!']);
+        }
+        return response()->json(['code'=>200,'msg'=>'Delete Success!']);
+    }
 }

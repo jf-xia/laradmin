@@ -37,6 +37,36 @@ https://github.com/jf-xia/laradmin/commits/main
     2.  add a new date(...) function in app/Widgets/Form.php
 13. Jack can develop a new page widget by create a new Class in app/Widgets, and JSON template in page view files(create and edit).
 
+
+## A Sample CRM system Design Scenario
+
+1. Run SQL script 'storage/app/mysql/laradmin2021_04_06_16_03_31.sql' in mysql database, some new table will be created: customers, leads, contracts, and those pages and its JSON are already set in.
+2. A new user Joseph registers a new account.
+3. Joseph logs in with his email and password.
+4. Only Admin user can see the admin menu, so in this scenario Joseph can only see a Customer
+5. Jack can access Page and RBAC Management after he got admin role
+6. Jack create a new table tasks by phpMyAdmin
+   1. `id` int unsigned NOT NULL AUTO_INCREMENT,
+   2. `title` varchar(255),
+   3. `start_at` datetime,
+   4. `created_at` timestamp,
+   5. `updated_at` timestamp,
+   6. `deleted_at` timestamp,
+7. Jack Create a new Page "Task" by fill some fields, validation error will display if title and url are empty.
+   1. Title: Task Management
+   2. URL: page/tasks
+   3. Model: App\Models\System\Model|tasks
+   4. Template: {"form":{"title":"Create Task","action":"model/tasks","fields":[{"id":"title","name":"title","type":"text","class":"form-control","front":"input","label":"Title","placeholder":"Title"},{"id":"start_at","name":"start_at","type":"text","class":"form-control","front":"date","label":"Start At","placeholder":"Start At"}],"viewClass":{"field":"col","label":"form-label col-3 col-form-label","form-group":"form-group mb-3 row"},"subTemplate":"1"},"table":{"title":"Task List","delete":"model/tasks","columns":{"id":"ID","title":"Title","end_at":"End At","start_at":"Start At","created_at":"Create At","updated_at":"Updated At"},"searchField":"title"}}
+8. Jack posted a task “I plan to visit Tokyo Disneyland with my family” with start date “2021-11-11”. 
+9. Jack can edit the task table and page, for example, add a new map location field.
+10. Jack can find all the posted tasks on http(s)://domain/page/tasks
+11. Jack can delete any tasks on http(s)://domain/page/tasks
+12. Jack can search tasks by title on http(s)://domain/page/tasks
+13. Jack can develop a new field widget.
+    1.  create date.blade.php in view/tabler/widgets/form, include HTML, CSS, and JS
+    2.  add a new date(...) function in app/Widgets/Form.php
+14. Jack can develop a new page widget by create a new Class in app/Widgets, and JSON template in page view files(create and edit).
+    
 ## Module 1: Login and Register by Tabler Template
 
 1. Setup mysql database, and Run php artisan migrate and php artisan make:auth.

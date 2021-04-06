@@ -46,10 +46,6 @@ Laravel = 6.20
    3. For data row
    4. For report
 
-## Data Model
-
-![Data Model](LarAdminDataModel.jpg)
-
 ## Built With
 - [Laravel] (http://laravel.com)
 - [Tabler base Bootstrap 4.0] (https://github.com/tabler/tabler)
@@ -61,7 +57,7 @@ Laravel = 6.20
 
 ## Open API
 - [Google Map] (http://Google.com)
-- [Cloud Object Storage] (tencent or aliyun)
+- [Cloud Object Storage] (Tencent Cloud)
 
 ## Demo Application
 
@@ -71,8 +67,6 @@ Laravel = 6.20
 - [ ] Workflow (BPMN 2.0) 
 - [ ] Localization 
 - [ ] Documentation 
-- [ ] Casbin?
-
 
 ## License
 laradmin is licensed under The MIT License (MIT).

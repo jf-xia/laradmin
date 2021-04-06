@@ -77,8 +77,8 @@ class ModelController
             $this->model->findOrFail($id)->delete();
         } catch (\Throwable $th) {
             Log::error('model destroy',[$th]);
-            return response()->json(['code'=>500]);
+            return response()->json(['code'=>500,'msg'=>'Server Error!']);
         }
-        return response()->json(['code'=>200]);
+        return response()->json(['code'=>200,'msg'=>'Delete Success!']);
     }
 }

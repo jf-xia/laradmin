@@ -75,6 +75,12 @@ $(document).ready(function () {
                 // console.log(data);
                 if (data.code==200) {
                     row.parent().parent().remove();
+                    toastr.success(data.msg);
+                } else if (data.code==401) {
+                    // alert(data.msg);
+                    toastr.error(data.msg);
+                } else {
+                    toastr.error(data.msg);
                 }
             }
         });
