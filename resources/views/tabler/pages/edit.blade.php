@@ -45,7 +45,6 @@
   </div>
 </div>
 
-@section("js")
 <link href="/vendor/jsoneditor/jsoneditor.css" rel="stylesheet" type="text/css">
 <script src="/vendor/jsoneditor/jsoneditor.min.js"></script>
 
@@ -191,6 +190,5 @@ editor.expandAll()
 // containerField.value=editor.getText()
 </script>
 
-@endsection
 
 @endsection

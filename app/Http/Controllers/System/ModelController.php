@@ -77,34 +77,8 @@ class ModelController
             $this->model->findOrFail($id)->delete();
         } catch (\Throwable $th) {
             Log::error('model destroy',[$th]);
-            response()->json(['code'=>500]);
+            return response()->json(['code'=>500]);
         }
-        response()->json(['code'=>200]);
+        return response()->json(['code'=>200]);
     }
-
-    // TODO edit
-    // public function edit($id)
-    // {
-        
-    // }
-
-    // public function update(Request $request, $id)
-    // {
-        
-    // }
-
-    // public function index()
-    // {
-    //     dd($this->model);
-    // }
-
-    // public function create()
-    // {
-        
-    // }
-
-    // public function show(Request $request, $id)
-    // {
-
-    // }
 }

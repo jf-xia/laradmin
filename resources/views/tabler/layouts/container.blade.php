@@ -31,6 +31,7 @@
 
 <body class="antialiased">
   <div class="page">
+  @include('tabler.partials.header')
   @include('tabler.partials.sidebar')
   <div class="content">
       <div class="container-xl">
@@ -76,7 +77,5 @@
     </div>
   </div>
   @include('tabler.partials.toastr')
-  @yield("js")
-  @yield("jsDelete")
 </body>
 </html>

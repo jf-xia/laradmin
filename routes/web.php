@@ -31,8 +31,9 @@ Route::group([
         }
     }
     
+    $router->resource('/customer', 'CustomerController');
     $router->post('/api/tencent/textTranslate', 'Api\TencentController@textTranslate');
-    
+
     $router->resource('/user', 'Auth\UserController');
     $router->resource('/role', 'Auth\RoleController');
     $router->resource('/permission', 'Auth\PermissionController');
