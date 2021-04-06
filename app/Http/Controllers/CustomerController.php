@@ -31,9 +31,12 @@ class CustomerController
     /**
      * customer update to Database
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $data = request()->except(['_token','_method']);
+        $request->validate([
+            'name' => 'required|unique:customers|max:255'
+        ]);
+        $data = $request->except(['_token','_method']);
         try {
             $customer = Customer::find($id)->update($data);
         } catch (\Throwable $th) {
@@ -49,7 +52,7 @@ class CustomerController
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required|unique:customers|max:255'
         ]);
         try {
             $customer = new Customer();

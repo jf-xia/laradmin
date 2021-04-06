@@ -4,7 +4,7 @@
 <div class="col-12">
   <div class="card">
       <div class="card-body border-bottom py-3">
-        <form action="{!! route('customer.update',$id) !!}" method="POST">
+        <form action="{!! url('customer/'.$id) !!}" method="POST">
           {{ method_field('PUT') }}
           {{ csrf_field() }}
           <div class="row">
