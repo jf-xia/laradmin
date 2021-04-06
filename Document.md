@@ -49,6 +49,8 @@ https://github.com/jf-xia/laradmin/commits/main
 7. Joseph can click edit "HKU" customer to the edit page.
 8. Joseph can update customer name to "The University of Hong Kong" in the edit page.
 9. Joseph can also create or delete tasks, leads and contracts related to "HKU" in the edit page.
+
+![CRM Edit page](doc/crm-edit.png)
     
 ## Module 1: Login and Register by Tabler Template
 
