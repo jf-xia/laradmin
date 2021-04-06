@@ -56,6 +56,14 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'news_api_url' => env('NEWS_API_URL', null),
+
+    'news_api_key' => env('NEWS_API_KEY', null),
+
+    'default_news_source' => env('DEFAULT_NEWS_SOURCE', 'CNN'),
+
+    'default_news_source_id' => env('DEFAULT_NEWS_SOURCE_ID', 'cnn'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -207,6 +215,7 @@ return [
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Helper' => App\Helpers\Helper::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
