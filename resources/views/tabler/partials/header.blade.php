@@ -11,11 +11,11 @@
     </h1>
     <div class="navbar-nav flex-row order-md-last">
       <div class="nav-item dropdown">
+        <?php $user = \Auth::user(); ?>
         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-          <span class="avatar avatar-sm" style="background-image: url(/static/avatars/000m.jpg)"></span>
+          <span class="avatar avatar-sm" style="background-image: url({{ $user->avatar?:'/static/avatars/000m.jpg' }})"></span>
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-          <?php $user = \Auth::user(); ?>
           <div class="dropdown-item"><span >Hi, {{ $user->name }}</span></div>
           <div class="dropdown-divider"></div>
           <!-- <div class="dropdown-divider"></div> -->
