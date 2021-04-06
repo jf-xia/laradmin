@@ -14,7 +14,7 @@ https://github.com/jf-xia/laradmin/commits/main
 1. A user Jack registers a new account.
 2. Jack logs in with his email and password.
 3. administrator (Account: admin@admin.com; Password: 11111111) attach a admin role to the user Jack ![rbac](doc/rbac.png)
-4. Jack is a administrator now, and he can access Page and RBAC Management after he got administrator role
+4. Jack is a administrator now, and he can access Page and Role Management after he got administrator role
 5. Jack create a new table tasks by phpMyAdmin
    1. `id` int unsigned NOT NULL AUTO_INCREMENT,
    2. `title` varchar(255),
@@ -49,6 +49,7 @@ https://github.com/jf-xia/laradmin/commits/main
 7. Joseph can click edit "HKU" customer to the edit page.
 8. Joseph can update customer name to "The University of Hong Kong" in the edit page.
 9. Joseph can also create or delete tasks, leads and contracts related to "HKU" in the edit page.
+10. By using Page Management and mysql to create pages and tables, administrator can add more Relational Entities to customer, such as: opportunity, contact, campaign, quote, product, competitor, invoice, receipt, etc...
 
 ![CRM Edit page](doc/crm-edit.png)
     
