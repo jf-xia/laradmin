@@ -21,6 +21,10 @@ Route::get('/', function () {
 Route::group([
     'middleware' => 'auth'
 ], function ($router) {
+    
+    $router->resource('/customer', 'CustomerController');
+    $router->post('/api/tencent/textTranslate', 'Api\TencentController@textTranslate');
+    
     // $router->group(['middleware' => ['role:admin']], function($router) {});
     $router->resource('/page', 'System\PageController');
     foreach (Page::all(['url']) as $key => $page) {
@@ -30,10 +34,6 @@ Route::group([
             $router->get('search/'.$key[1], 'System\ModelController@search');
         }
     }
-    
-    $router->resource('/customer', 'CustomerController');
-    $router->post('/api/tencent/textTranslate', 'Api\TencentController@textTranslate');
-
     $router->resource('/user', 'Auth\UserController');
     $router->resource('/role', 'Auth\RoleController');
     $router->resource('/permission', 'Auth\PermissionController');
