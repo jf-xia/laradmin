@@ -40,14 +40,26 @@ class ArticleController extends Controller
                 'publishedAt'    => Carbon::parse($article->publishedAt),
             ]);
         });
+        
+        $techs  = DB::table('Articles')->select("*")->join('sources','sources.id','=','Articles.source_id')
+        ->where('sources.category','=','technology')
+        ->take(8)
+        ->inRandomOrder()
+        ->get();
 
+        $businesses = DB::table('Articles')->select("*")->join('sources','sources.id','=','Articles.source_id')
+        ->where('sources.category','=','business')
+        ->take(5)
+        ->inRandomOrder()
+        ->get();
 
-        $Articles = Article::where('source_id', $source->id)->get();
+        $insiders = Article::select("*")->where('source_id','=','business-insider-uk')->orderBy('id','desc')->take(8)->inRandomOrder()->get();
+        $Articles = Article::where('source_id', $source->id)->take(6)->get();
 
-        return view('news',compact('Articles'));
+        return view('news',compact('Articles','insiders','techs','businesses'));
     }
 
-    public function show(Request $request, Source $source, Article $article) {
-        return $article;
+    public function show(Request $request) {
+    
     }
 }
