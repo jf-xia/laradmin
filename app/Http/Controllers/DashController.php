@@ -26,13 +26,14 @@ class DashController
         $page->description = ' - LarAdmin Dashboard';
         $usercount = DB::table('users')->count();
         $taskcount = DB::table('tasks')->count();
-        $rolecount = DB::table('roles')->count();
+        $pageCount = DB::table('pages')->count();
+        $sourceCount = DB::table('sources')->count();
     
         $users = DB::table('users')->select(DB::raw('*'))
               ->whereRaw('Date(created_at) = CURDATE()')->count();
         
 
-        return view('tabler.reports.index',compact('page','usercount','taskcount','rolecount','users'));
+        return view('tabler.reports.index',compact('page','usercount','taskcount','pageCount','users','sourceCount'));
     }
 
     /**
