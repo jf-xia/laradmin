@@ -149,3 +149,7 @@ https://github.com/jf-xia/laradmin/commit/b1c8ee7540a96a0fba37cc2ddfee20a5cd8ee1
 
 GitHub committed Log:
 https://github.com/jf-xia/laradmin/commit/ee9e80b8b775e35e571f03c40efcb7d642a22b21
+
+## Module 7: CRM system
+
+
