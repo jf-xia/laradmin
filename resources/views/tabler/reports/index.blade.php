@@ -95,7 +95,7 @@
                     </div>
                   </div>
                   <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-3 me-2">2,986</div>
+                    <div class="h1 mb-3 me-2"></div>
                     <div class="me-auto">
                       <span class="text-green d-inline-flex align-items-center lh-1">
                         4% <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="3 17 9 11 13 15 21 7" /><polyline points="14 7 21 7 21 14" /></svg>
@@ -999,328 +999,6 @@
                 </div>
               </div>
             </div>
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Invoices</h3>
-                </div>
-                <div class="card-body border-bottom py-3">
-                  <div class="d-flex">
-                    <div class="text-muted">
-                      Show
-                      <div class="mx-2 d-inline-block">
-                        <input type="text" class="form-control form-control-sm" value="8" size="3" aria-label="Invoices count">
-                      </div>
-                      entries
-                    </div>
-                    <div class="ms-auto text-muted">
-                      Search:
-                      <div class="ms-2 d-inline-block">
-                        <input type="text" class="form-control form-control-sm" aria-label="Search invoice">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="table-responsive">
-                  <table class="table card-table table-vcenter text-nowrap datatable">
-                    <thead>
-                      <tr>
-                        <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select all invoices"></th>
-                        <th class="w-1">No. <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
-                        </th>
-                        <th>Invoice Subject</th>
-                        <th>Client</th>
-                        <th>VAT No.</th>
-                        <th>Created</th>
-                        <th>Status</th>
-                        <th>Price</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001401</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Design Works</a></td>
-                        <td>
-                          <span class="flag flag-country-us"></span>
-                          Carlson Limited
-                        </td>
-                        <td>
-                          87956621
-                        </td>
-                        <td>
-                          15 Dec 2017
-                        </td>
-                        <td>
-                          <span class="badge bg-success me-1"></span> Paid
-                        </td>
-                        <td>$887</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001402</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">UX Wireframes</a></td>
-                        <td>
-                          <span class="flag flag-country-gb"></span>
-                          Adobe
-                        </td>
-                        <td>
-                          87956421
-                        </td>
-                        <td>
-                          12 Apr 2017
-                        </td>
-                        <td>
-                          <span class="badge bg-warning me-1"></span> Pending
-                        </td>
-                        <td>$1200</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001403</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">New Dashboard</a></td>
-                        <td>
-                          <span class="flag flag-country-de"></span>
-                          Bluewolf
-                        </td>
-                        <td>
-                          87952621
-                        </td>
-                        <td>
-                          23 Oct 2017
-                        </td>
-                        <td>
-                          <span class="badge bg-warning me-1"></span> Pending
-                        </td>
-                        <td>$534</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001404</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Landing Page</a></td>
-                        <td>
-                          <span class="flag flag-country-br"></span>
-                          Salesforce
-                        </td>
-                        <td>
-                          87953421
-                        </td>
-                        <td>
-                          2 Sep 2017
-                        </td>
-                        <td>
-                          <span class="badge bg-secondary me-1"></span> Due in 2 Weeks
-                        </td>
-                        <td>$1500</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001405</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Marketing Templates</a></td>
-                        <td>
-                          <span class="flag flag-country-pl"></span>
-                          Printic
-                        </td>
-                        <td>
-                          87956621
-                        </td>
-                        <td>
-                          29 Jan 2018
-                        </td>
-                        <td>
-                          <span class="badge bg-danger me-1"></span> Paid Today
-                        </td>
-                        <td>$648</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001406</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Sales Presentation</a></td>
-                        <td>
-                          <span class="flag flag-country-br"></span>
-                          Tabdaq
-                        </td>
-                        <td>
-                          87956621
-                        </td>
-                        <td>
-                          4 Feb 2018
-                        </td>
-                        <td>
-                          <span class="badge bg-secondary me-1"></span> Due in 3 Weeks
-                        </td>
-                        <td>$300</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001407</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Logo & Print</a></td>
-                        <td>
-                          <span class="flag flag-country-us"></span>
-                          Apple
-                        </td>
-                        <td>
-                          87956621
-                        </td>
-                        <td>
-                          22 Mar 2018
-                        </td>
-                        <td>
-                          <span class="badge bg-success me-1"></span> Paid Today
-                        </td>
-                        <td>$2500</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
-                        <td><span class="text-muted">001408</span></td>
-                        <td><a href="invoice.html" class="text-reset" tabindex="-1">Icons</a></td>
-                        <td>
-                          <span class="flag flag-country-pl"></span>
-                          Tookapic
-                        </td>
-                        <td>
-                          87956621
-                        </td>
-                        <td>
-                          13 May 2018
-                        </td>
-                        <td>
-                          <span class="badge bg-success me-1"></span> Paid Today
-                        </td>
-                        <td>$940</td>
-                        <td class="text-end">
-                          <span class="dropdown">
-                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                              <a class="dropdown-item" href="#">
-                                Action
-                              </a>
-                              <a class="dropdown-item" href="#">
-                                Another action
-                              </a>
-                            </div>
-                          </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer d-flex align-items-center">
-                  <p class="m-0 text-muted">Showing <span>1</span> to <span>8</span> of <span>16</span> entries</p>
-                  <ul class="pagination m-0 ms-auto">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="15 6 9 12 15 18" /></svg>
-                        prev
-                      </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">
-                        next <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="9 6 15 12 9 18" /></svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1432,6 +1110,9 @@
     <script src="./dist/js/tabler.min.js"></script>
     <script>
       // @formatter:off
+      
+      
+
       document.addEventListener("DOMContentLoaded", function () {
       	window.ApexCharts && (new ApexCharts(document.getElementById('chart-revenue-bg'), {
       		chart: {
@@ -1602,7 +1283,7 @@
       			},
       		},
       		labels: [
-      			'2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19'
+               
       		],
       		colors: ["#206bc4"],
       		legend: {
@@ -1612,8 +1293,16 @@
       });
       // @formatter:on
     </script>
-    <script>
+    <script  type="text/javascript">
       // @formatter:off
+
+      var data = {!! json_encode($sources) !!};
+      var cat = [];
+      for(var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        console.log(obj.category);
+        cat.push(obj.category)
+        }
       document.addEventListener("DOMContentLoaded", function () {
       	window.ApexCharts && (new ApexCharts(document.getElementById('chart-mentions'), {
       		chart: {
@@ -1646,9 +1335,6 @@
       		},{
       			name: "Social",
       			data: [2, 5, 4, 3, 3, 1, 4, 7, 5, 1, 2, 5, 3, 2, 6, 7, 7, 1, 5, 5, 2, 12, 4, 6, 18, 3, 5, 2, 13, 15, 20, 47, 18, 15, 11, 10, 0]
-      		},{
-      			name: "Other",
-      			data: [2, 9, 1, 7, 8, 3, 6, 5, 5, 4, 6, 4, 1, 9, 3, 6, 7, 5, 2, 8, 4, 9, 1, 2, 6, 7, 5, 1, 8, 3, 2, 3, 4, 9, 7, 1, 6]
       		}],
       		grid: {
       			padding: {
@@ -1674,17 +1360,16 @@
       			axisBorder: {
       				show: false,
       			},
-      			type: 'datetime',
+      			type: 'string',
       		},
       		yaxis: {
       			labels: {
       				padding: 4
       			},
       		},
-      		labels: [
-      			'2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19', '2020-07-20', '2020-07-21', '2020-07-22', '2020-07-23', '2020-07-24', '2020-07-25', '2020-07-26'
-      		],
-      		colors: ["#206bc4", "#79a6dc", "#bfe399"],
+      		labels:cat         
+      		,
+      		colors: ["#206bc4", "#bfe399"],
       		legend: {
       			show: true,
       			position: 'bottom',

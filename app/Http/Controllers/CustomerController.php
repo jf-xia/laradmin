@@ -61,9 +61,9 @@ class CustomerController
             }
             $customer->user_id = Auth::user()->id;
             $customer->save();
-            session()->flash('admin-toastr', ['type'=>'success','message'=>'Customer Create Success!']);
+            session()->flash('admin-toastr', ['type'=>'success','message'=>'Customer Created Success!']);
         } catch (\Throwable $th) {
-            session()->flash('admin-toastr', ['type'=>'error','message'=>'Customer Create Failed!']);
+            session()->flash('admin-toastr', ['type'=>'error','message'=>'Customer Created Failed!']);
             Log::error('Customer store',[$th]);
         }
         return redirect(route('customer.edit',['customer'=>$customer->id]));
@@ -74,7 +74,7 @@ class CustomerController
         try {
             $customer = Customer::findOrFail($id);
             if ($customer->user_id != Auth::id()) {
-                return response()->json(['code'=>401,'msg'=>'Unauthorized! This Customer is not belong to you.']);
+                return response()->json(['code'=>401,'msg'=>'Unauthorized! This Customer does not belong to you.']);
             }
             $customer->delete();
         } catch (\Throwable $th) {

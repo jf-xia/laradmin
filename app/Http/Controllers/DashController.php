@@ -29,11 +29,11 @@ class DashController
         $pageCount = DB::table('pages')->count();
         $sourceCount = DB::table('sources')->count();
     
-        $users = DB::table('users')->select(DB::raw('*'))
-              ->whereRaw('Date(created_at) = CURDATE()')->count();
+        $sources = DB::table('sources')->select('category')->distinct('category')->get();
+   
+ 
         
-
-        return view('tabler.reports.index',compact('page','usercount','taskcount','pageCount','users','sourceCount'));
+        return view('tabler.reports.index',compact('page','usercount','taskcount','pageCount','sourceCount','sources'));
     }
 
     /**
