@@ -1,4 +1,4 @@
-<div class="modal modal-blur fade" id="modal-team" tabindex="-1" style="display: none;" aria-hidden="true">
+<div class="modal modal-blur fade" id="modal-{{ str_replace('/','-',$data['action']) }}" tabindex="-1" style="display: none;" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">

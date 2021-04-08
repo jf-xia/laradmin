@@ -14,7 +14,7 @@ class Page extends Model
   private $html='';
   private $modelObject;
 
-  public function html()
+  public function html($where = '',$whereIs = '')
   {
     $modelN = explode('|',$this->model);
     if (isset($modelN[1])) {
@@ -22,9 +22,15 @@ class Page extends Model
     } else {
         $this->modelObject = new $modelN[0]();
     }
+    if ($where && $whereIs){
+      $this->modelObject = $this->modelObject->where($where,$whereIs);
+    }
     foreach ($this->template as $view=>$data) {
       $widget = "App\\Widgets\\".ucfirst($view);
-      $this->html .= new $widget($this->modelObject,$data);
+      if ($view == 'form' && $where && $whereIs) {
+        $data['fields'][]=["id" => $where,"name" => $where,"value" => $whereIs,"type" => "hidden","class" => "form-control","front" => "input","label" => ""];
+      }
+      $this->html .= new $widget($this->modelObject,$data,$where,$whereIs);
     }
     return $this->html;
   }
@@ -38,14 +44,6 @@ class Page extends Model
     return cache($cacheKey);
   }
 
-  // public function setTemplateAttribute($template)
-  // {
-
-  //   if (!is_array($template)){
-  //     $this->attributes['template'] = json_decode(trim($template,chr(239).chr(187).chr(191)),true);
-  //   // } else {
-  //   //   $this->attributes['template'] = json_decode(json_encode($template));
-  //   }
-  // }
+  //TODO On Save clear cache
 
 }

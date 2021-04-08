@@ -13,8 +13,8 @@ https://github.com/jf-xia/laradmin/commits/main
 
 1. A user Jack registers a new account.
 2. Jack logs in with his email and password.
-3. Admin user (Account: admin@admin.com; Password: 11111111) can attach a admin role to the user Jack ![rbac](doc/rbac.png)
-4. Jack can access Page and RBAC Management after he got admin role
+3. administrator (Account: admin@admin.com; Password: 11111111) attach a admin role to the user Jack ![rbac](doc/rbac.png)
+4. Jack is a administrator now, and he can access Page and Role Management after he got administrator role
 5. Jack create a new table tasks by phpMyAdmin
    1. `id` int unsigned NOT NULL AUTO_INCREMENT,
    2. `title` varchar(255),
@@ -37,6 +37,22 @@ https://github.com/jf-xia/laradmin/commits/main
     2.  add a new date(...) function in app/Widgets/Form.php
 13. Jack can develop a new page widget by create a new Class in app/Widgets, and JSON template in page view files(create and edit).
 
+
+## A Sample CRM system Design Scenario
+
+1. Run SQL script 'storage/app/mysql/laradmin2021_04_06_16_03_31.sql' in mysql database, some new table will be created: customers, leads, contracts, and those pages and its JSON are already set in.
+2. A new user Joseph registers a new account.
+3. Joseph logs in with his email and password.
+4. Only administrator can see all menus, so in this scenario Joseph can only see Customer page.
+5. Joseph can see all customers and create new customer, but he can only edit or delete his own customer. Otherwise, system will show an error: 401 Unauthorized.
+6. Joseph can create a new customer "HKU".
+7. Joseph can click edit "HKU" customer to the edit page.
+8. Joseph can update customer name to "The University of Hong Kong" in the edit page.
+9. Joseph can also create or delete tasks, leads and contracts related to "HKU" in the edit page.
+10. By using Page Management and mysql to create pages and tables, administrator can add more Relational Entities to customer, such as: opportunity, contact, campaign, quote, product, competitor, invoice, receipt, etc...
+
+![CRM Edit page](doc/crm-edit.png)
+    
 ## Module 1: Login and Register by Tabler Template
 
 1. Setup mysql database, and Run php artisan migrate and php artisan make:auth.
@@ -133,3 +149,7 @@ https://github.com/jf-xia/laradmin/commit/b1c8ee7540a96a0fba37cc2ddfee20a5cd8ee1
 
 GitHub committed Log:
 https://github.com/jf-xia/laradmin/commit/ee9e80b8b775e35e571f03c40efcb7d642a22b21
+
+## Module 7: CRM system
+
+

@@ -26,8 +26,6 @@
 </div>
 
 <script>
-// $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
-
 $(document).ready(function () {
   $(".translate").click(function() {
     if ($("#{{ $id }}").val()) {
