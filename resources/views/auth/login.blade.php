@@ -62,6 +62,15 @@
             <button type="submit" class="btn btn-primary w-100">Sign in</button>
         </div>
         </div>
+        <div class="hr-text">or</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col"><a href="https://moodle.hku.hk/" class="btn btn-white w-100">
+               <img src="/hku.jpg"  alt="Image" width="24" height="24"  /> 
+                   Login with your HKU account
+                </a></div>
+            </div>
+          </div>
     </form>
     <div class="text-center text-muted mt-3">
         Don't have account yet? <a href="/register" tabindex="-1">Sign up</a>

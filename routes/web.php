@@ -37,7 +37,15 @@ Route::group([
     $router->resource('/user', 'Auth\UserController');
     $router->resource('/role', 'Auth\RoleController');
     $router->resource('/permission', 'Auth\PermissionController');
+    $router->resource('/report','DashController');
+    
+    Route::get('/', 'ArticleController@index');
+    /* To download the latest list of news sources if the source table is nothing*/
+    /*Route::get('/', 'SourceController@backup');*/
     
 });
 
+
+
+/**/
 Auth::routes();

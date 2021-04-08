@@ -26,7 +26,7 @@ class PageController
         $page = new Page();
         $rows = $page->paginate();
         $page->title = 'Page';
-        $page->description = ' - Auto Generate Admin Pages, Form, Grid, Meun, etc.';
+        $page->description = ' - Auto Generate Admin Pages, Form, Grid, Menu, etc.';
         return view('tabler.pages.index',compact('page','rows'));
     }
 
