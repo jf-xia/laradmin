@@ -28,12 +28,19 @@ class DashController
         $taskcount = DB::table('tasks')->count();
         $pageCount = DB::table('pages')->count();
         $sourceCount = DB::table('sources')->count();
-    
-        $sources = DB::table('sources')->select('category')->distinct('category')->get();
-   
+        $count = DB::table('sources')
+                 ->select('category', DB::raw('count(*) as total'))
+                 ->groupBy('category')
+                 ->get();
+        $artcount = DB::table('articles')
+                 ->select('source_id', DB::raw('count(*) as total'))
+                 ->orderby('total','desc')
+                 ->groupBy('source_id')
+                 ->take(10)
+                 ->get();
  
         
-        return view('tabler.reports.index',compact('page','usercount','taskcount','pageCount','sourceCount','sources'));
+        return view('tabler.reports.index',compact('page','usercount','taskcount','pageCount','sourceCount','count','artcount'));
     }
 
     /**
