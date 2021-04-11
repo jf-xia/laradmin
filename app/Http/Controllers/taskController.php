@@ -2,45 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PageRequest;
 use Illuminate\Http\Request;
-use App\Models\System\Page;
+use App\Models\task;
 use DB;
 
-class DashController
+
+class taskController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $req)
+    public function index()
     {
-        $user = \Auth::user();
-        if (!$user->hasRole('admin')) {
-            abort(403);
-        }
-        $page = new Page();
-        /*$rows = $page->paginate();*/
-        $page->title = 'Report';
-        $page->description = ' - LarAdmin Dashboard';
-        $userCount = DB::table('users')->count();
-        $taskCount = DB::table('tasks')->count();
-        $pageCount = DB::table('pages')->count();
-        $sourceCount = DB::table('sources')->count();
-        $count = DB::table('sources')
-                 ->select('category', DB::raw('count(*) as total'))
-                 ->groupBy('category')
-                 ->get();
-        $artcount = DB::table('articles')
-                 ->select('source_id', DB::raw('count(*) as total'))
-                 ->orderby('total','desc')
-                 ->groupBy('source_id')
-                 ->take(10)
-                 ->get();
- 
-        
-        return view('tabler.reports.index',compact('page','userCount','taskCount','pageCount','sourceCount','count','artcount'));
+        //
     }
 
     /**
@@ -72,7 +48,9 @@ class DashController
      */
     public function show($id)
     {
+       $task = task::find($id);
         //
+       return view("tabler.tasks.show", compact('task')); 
     }
 
     /**

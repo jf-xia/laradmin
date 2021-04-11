@@ -22,7 +22,7 @@
       {{ session()->get('success') }}  
     </div><br />
   @endif
-<script src="/js/jquery-3.5.1.min.js"></script
+<script src="/js/jquery-3.5.1.min.js"></script>
 <!-------- LAB SAMPLE GOOGLE MAP API : AIzaSyC9iA2pIWsCO4P3KQkEY8OgeEiMfVmg1oE   ------------>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9iA2pIWsCO4P3KQkEY8OgeEiMfVmg1oE"></script>
 <script src="/js/contactIndex.js"></script>

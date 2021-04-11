@@ -1,3 +1,4 @@
+
 <div class="col-12">
 <div class="card">
     <div class="card-header">
@@ -39,10 +40,11 @@
             @foreach($data['columns'] as $col=>$label)
                 @if(isset($label['html']))
                 <td>{!! str_replace('$$$val$$$',$row->$col,$label['html']) ?? '' !!}</td>
-                @else
+                @else    
                 <td>{{ $row->$col }}</td>
                 @endif
             @endforeach
+
             <td>
                 <!-- <a href="#" data-toggle-icon="edit" title="edit" data-icon-svg="<figure class=&quot;highlight&quot;><pre><code class=&quot;language-html&quot; data-lang=&quot;html&quot;><span class=&quot;nt&quot;>&amp;lt;svg</span> <span class=&quot;na&quot;>xmlns=</span><span class=&quot;s&quot;>&quot;http://www.w3.org/2000/svg&quot;</span> <span class=&quot;na&quot;>class=</span><span class=&quot;s&quot;>&quot;icon&quot;</span> <span class=&quot;na&quot;>width=</span><span class=&quot;s&quot;>&quot;24&quot;</span> <span class=&quot;na&quot;>height=</span><span class=&quot;s&quot;>&quot;24&quot;</span> <span class=&quot;na&quot;>viewBox=</span><span class=&quot;s&quot;>&quot;0 0 24 24&quot;</span> <span class=&quot;na&quot;>stroke-width=</span><span class=&quot;s&quot;>&quot;2&quot;</span> <span class=&quot;na&quot;>stroke=</span><span class=&quot;s&quot;>&quot;currentColor&quot;</span> <span class=&quot;na&quot;>fill=</span><span class=&quot;s&quot;>&quot;none&quot;</span> <span class=&quot;na&quot;>stroke-linecap=</span><span class=&quot;s&quot;>&quot;round&quot;</span> <span class=&quot;na&quot;>stroke-linejoin=</span><span class=&quot;s&quot;>&quot;round&quot;</span><span class=&quot;nt&quot;>&amp;gt;&amp;lt;path</span> <span class=&quot;na&quot;>stroke=</span><span class=&quot;s&quot;>&quot;none&quot;</span> <span class=&quot;na&quot;>d=</span><span class=&quot;s&quot;>&quot;M0 0h24v24H0z&quot;</span> <span class=&quot;na&quot;>fill=</span><span class=&quot;s&quot;>&quot;none&quot;</span><span class=&quot;nt&quot;>/&amp;gt;&amp;lt;path</span> <span class=&quot;na&quot;>d=</span><span class=&quot;s&quot;>&quot;M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3&quot;</span> <span class=&quot;nt&quot;>/&amp;gt;&amp;lt;path</span> <span class=&quot;na&quot;>d=</span><span class=&quot;s&quot;>&quot;M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3&quot;</span> <span class=&quot;nt&quot;>/&amp;gt;&amp;lt;line</span> <span class=&quot;na&quot;>x1=</span><span class=&quot;s&quot;>&quot;16&quot;</span> <span class=&quot;na&quot;>y1=</span><span class=&quot;s&quot;>&quot;5&quot;</span> <span class=&quot;na&quot;>x2=</span><span class=&quot;s&quot;>&quot;19&quot;</span> <span class=&quot;na&quot;>y2=</span><span class=&quot;s&quot;>&quot;8&quot;</span> <span class=&quot;nt&quot;>/&amp;gt;&amp;lt;/svg&amp;gt;</span></code></pre></figure>">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"></path><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"></path><line x1="16" y1="5" x2="19" y2="8"></line></svg></a> -->
@@ -88,3 +90,4 @@ $(document).ready(function () {
   });
 });
 </script>
+

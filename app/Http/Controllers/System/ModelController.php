@@ -81,4 +81,6 @@ class ModelController
         }
         return response()->json(['code'=>200,'msg'=>'Delete Success!']);
     }
+
+
 }

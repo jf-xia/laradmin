@@ -27,7 +27,7 @@
 
                     </div>
                   </div>
-                  <div class="h1 mb-3">{{$usercount}}</div>
+                  <div class="h1 mb-3">{{$userCount}}</div>
                   <div class="d-flex mb-2">
                     <div><a href="{{ url('page/users')}}">See More</a></div>
                     <div class="ms-auto">
@@ -41,57 +41,57 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+			<div class="col-sm-6 col-lg-3">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex align-items-center">
-                    <div class="subheader">Total News Source retrieved from news api</div>
-                    <div class="ms-auto lh-1">
+                    <div class="subheader">Total tasks created</div>
+                  </div>
+                  <div class="h1 mb-3">{{$taskCount}}</div>
+                  <div class="d-flex mb-2">
+                    <div><a href="{{ url('page/tasks')}}">See More</a></div>
+                    <div class="ms-auto">
                     </div>
                   </div>
-                  <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-0 me-2">{{$sourceCount}}</div>
-                    <div class="me-auto">
-                      <span class="text-green d-inline-flex align-items-center lh-1">
-            
-                      </span>
-                    </div>
-                  </div>
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="5" width="16" height="16" rx="2" /><line x1="16" y1="3" x2="16" y2="7" /><line x1="8" y1="3" x2="8" y2="7" /><line x1="4" y1="11" x2="20" y2="11" /><rect x="8" y="15" width="2" height="2" /></svg>
                 </div>
-                <div id="chart-revenue-bg" class="chart-sm"></div>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+           
+			<div class="col-sm-6 col-lg-3">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex align-items-center">
                     <div class="subheader">Total Pages created</div>
-                    <div class="ms-auto lh-1">
+                  </div>
+                  <div class="h1 mb-3">{{$pageCount}}</div>
+                  <div class="d-flex mb-2">
+                    <div><a href="{{ url('page')}}">See More</a></div>
+                    <div class="ms-auto">
                     </div>
                   </div>
-                  <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-3 me-2">{{$pageCount}}</div>
-                    <div class="me-auto">
-                    </div>
-                  </div>
-                  <div id="chart-new-clients" class="chart-sm"></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-man" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <circle cx="12" cy="5" r="2" />
+                        <path d="M10 22v-5l-1 -1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5" />
+                </svg>
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+			<div class="col-sm-6 col-lg-3">
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex align-items-center">
-                    <div class="subheader">Total Tasks created</div>
-                    <div class="ms-auto lh-1">
+                    <div class="subheader">Total news sources connected</div>
+                  </div>
+                  <div class="h1 mb-3">{{$sourceCount}}</div>
+                  <div class="d-flex mb-2">
+                    <div><a href="{{ url('page/source')}}">See More</a></div>
+                    <div class="ms-auto">
                     </div>
                   </div>
-                  <div class="d-flex align-items-baseline">
-                    <div class="h1 mb-3 me-2">{{$taskcount}}</div>
-                    <div class="me-auto">
-                    </div>
-                  </div>
-                  <div id="chart-new-clients" class="chart-sm"></div>
+                 <!-- Download SVG icon from http://tabler-icons.io/i/clipboard-check -->
+	<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><rect x="9" y="3" width="6" height="4" rx="2" /><path d="M9 14l2 2l4 -4" /></svg>
                 </div>
               </div>
             </div>
@@ -300,7 +300,7 @@
       		},
       		labels:source         
       		,
-      		colors: ["#206bc4"],
+      		colors: ["#47c420"],
       		legend: {
       			show: true,
       			position: 'bottom',
