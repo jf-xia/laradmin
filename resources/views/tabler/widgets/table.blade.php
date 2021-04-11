@@ -1,4 +1,6 @@
-
+<script  async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBilYanAx7OLAlCJ9I70UpDx0O6oOKuzAs&libraries=places&v=weekly&libraries=places" 
+    ></script>
 <div class="col-12">
 <div class="card">
     <div class="card-header">
@@ -40,7 +42,76 @@
             @foreach($data['columns'] as $col=>$label)
                 @if(isset($label['html']))
                 <td>{!! str_replace('$$$val$$$',$row->$col,$label['html']) ?? '' !!}</td>
-                @else    
+                @elseif($col == 'location')
+                <td><a href="#" class="btn btn-white" data-bs-toggle="modal" data-bs-target="#modal-simple{{$row->id}}">
+                {{ $row->$col }}</a>
+               <div class="modal modal-blur fade" id="modal-simple{{$row->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{{ $row->$col }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+                  <div class="card-title"></div>
+                  <div class="ratio ratio-16x9">
+                    <div>
+                      <div id="map{{$row->id}}" class="w-100 h-100"></div>
+                    </div>
+                  </div>
+        
+    <script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+      
+      let map{{$row->id}};
+      let service{{$row->id}};
+      let infowindow{{$row->id}};
+
+      document.addEventListener("DOMContentLoaded", function() { 
+        const sydney = new google.maps.LatLng(-33.867, 151.195);
+        infowindow{{$row->id}} = new google.maps.InfoWindow();
+        map{{$row->id}} = new google.maps.Map(document.getElementById("map{{$row->id}}"), {
+          center: sydney,
+          zoom: 15,
+        });
+        const request = {
+          query: "{{ $row->$col }}",
+          fields: ["name", "geometry"],
+        };
+        service{{$row->id}} = new google.maps.places.PlacesService(map{{$row->id}});
+        service{{$row->id}}.findPlaceFromQuery(request, (results, status) => {
+          if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+            for (let i = 0; i < results.length; i++) {
+              createMarker(results[i]);
+            }
+            map{{$row->id}}.setCenter(results[0].geometry.location);
+          }
+        });
+      })
+
+      function createMarker(place) {
+        if (!place.geometry || !place.geometry.location) return;
+        const marker = new google.maps.Marker({
+          map{{$row->id}},
+          position: place.geometry.location,
+        });
+        google.maps.event.addListener(marker, "click", () => {
+          infowindow{{$row->id}}.setContent(place.name || "");
+          infowindow{{$row->id}}.open(map);
+        });
+      }
+    </script>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+                <td>
+                @else
                 <td>{{ $row->$col }}</td>
                 @endif
             @endforeach
