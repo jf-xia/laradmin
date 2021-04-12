@@ -81,6 +81,46 @@
             </div>
            
     </div>
+    <div class="col-12">
+                  <div class="card">
+                    <div class="row row-0">
+                      <div class="col-3 order-md-last">
+                        <img src="#" class="w-100 h-100 object-cover" alt="">
+                      </div>
+                      <div class="col">
+                        <div class="card-body">
+                           <h3 class="card-title"> Customer Name:
+                             @foreach ($customer as $object)
+                              {{ $object->name }}
+                             @endforeach
+                          </h3>
+                          <div class="col-12">
+              <div class="card">
+                <div class="table-responsive">
+                  <table id="myTable"
+		class="table table-vcenter card-table">
+                    <thead>
+                      <tr>
+                        <th>Symbol</th>
+                        <th>Trade Date</th>
+                        <th>Exchange</th>
+                        <th>Closing Price</th>
+                        <th class="w-1"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    </div>
     <div class="col-lg-6">
               <div class="card">
                 <div class="card-body">
@@ -93,6 +133,8 @@
                 </div>
               </div>
     </div>
+</div>
+    
     <!-- Libs JS -->
     <!-- Tabler Core -->
     
@@ -115,7 +157,7 @@
         infowindow = new google.maps.InfoWindow();
         map = new google.maps.Map(document.getElementById("map"), {
           center: sydney,
-          zoom: 15,
+          zoom: 12,
         });
         const request = {
           query: "{{$task->location}}",
@@ -144,6 +186,38 @@
         });
       }
     </script>
-  
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+     <script>
+       var result;
+
+       var cs = {!! json_encode($customer) !!};
+       var symbol = cs[0].symbol;
+       
+jQuery(document).ready(function (){
+  jQuery.ajax({
+  url: 'http://api.marketstack.com/v1/eod/latest',
+  data: {
+    access_key: 'e8262ac45e05e551ed49c604b4cfa77a',
+    symbols : symbol
+  },
+  dataType: 'JSON',
+  success: function(data) {
+    
+    var replacer = function(key, value) {
+        return typeof value === 'undefined' ? null : value;
+      }
+    var parsed = JSON.parse(JSON.stringify(data, replacer));  
+    
+    console.log(parsed.data);
+
+    
+    
+      var row = $('<tr><td class="text-muted">' + parsed.data[0].symbol+ '</td><td class="text-muted">' + parsed.data[0].date+ '</td><td class="text-muted">' + parsed.data[0].exchange + '</td><td class="text-muted">' + parsed.data[0].close+ '</td></tr>');
+      $('#myTable').append(row);
+       
+  }
+});
+});
+</script>
   </body>
 </html>

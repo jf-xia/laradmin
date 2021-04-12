@@ -49,8 +49,14 @@ class taskController extends Controller
     public function show($id)
     {
        $task = task::find($id);
+       
+       $customer = DB::table('customers')
+       ->select('*')
+       ->join('tasks','tasks.customer_id','=','customers.id')
+       ->where(['tasks.id' => $id])
+       ->get();
         //
-       return view("tabler.tasks.show", compact('task')); 
+       return view("tabler.tasks.show", compact('task','customer')); 
     }
 
     /**
