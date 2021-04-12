@@ -1,4 +1,3 @@
-
 @extends('tabler.layouts.container')
 @section('page')
 

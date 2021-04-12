@@ -22,7 +22,7 @@
   </head>
   <body class="antialiased">
     <div class="page">
-    @include('tabler.frontend.layouts.sidebar')    
+    @include('tabler.partials.header')  
       <div class="content">
         <div class="container-xl">
           <!-- Page title -->

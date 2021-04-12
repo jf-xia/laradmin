@@ -21,7 +21,7 @@
     <link href="/dist/css/demo.min.css" rel="stylesheet"/>
   </head>
   <body class="antialiased">
-  @include('tabler.frontend.layouts.sidebar')   
+  @include('tabler.partials.header')   
     <div class="page">
     
       <div class="content">
