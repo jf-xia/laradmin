@@ -1,4 +1,4 @@
-<script  async defer
+<script 
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBilYanAx7OLAlCJ9I70UpDx0O6oOKuzAs&libraries=places&v=weekly&libraries=places" 
     ></script>
 <div class="col-12">

@@ -24,10 +24,12 @@ class DashController
         /*$rows = $page->paginate();*/
         $page->title = 'Report';
         $page->description = ' - LarAdmin Dashboard';
+        /* basic table rows count*/
         $userCount = DB::table('users')->count();
         $taskCount = DB::table('tasks')->count();
         $pageCount = DB::table('pages')->count();
         $sourceCount = DB::table('sources')->count();
+        $articleCount = DB::table('articles')->count();
         $count = DB::table('sources')
                  ->select('category', DB::raw('count(*) as total'))
                  ->groupBy('category')
@@ -38,9 +40,24 @@ class DashController
                  ->groupBy('source_id')
                  ->take(10)
                  ->get();
- 
-        
-        return view('tabler.reports.index',compact('page','userCount','taskCount','pageCount','sourceCount','count','artcount'));
+
+        $customer = DB::table('customers')->distinct('name')->count('name');
+        $contractCount = DB::table('contracts')->count();
+        $contracts = DB::table('contracts')
+        ->sum('amount');
+
+        $count = DB::table('sources')
+        ->select('category', DB::raw('count(*) as total'))
+        ->groupBy('category')
+        ->get();
+
+       
+
+
+    
+
+
+        return view('tabler.reports.index',compact('page','userCount','taskCount','pageCount','sourceCount','count','artcount','contracts','articleCount','customer','contractCount'));
     }
 
     /**
