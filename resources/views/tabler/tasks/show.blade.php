@@ -85,7 +85,7 @@
                   <div class="card">
                     <div class="row row-0">
                       <div class="col-3 order-md-last">
-                        <img src="#" class="w-100 h-100 object-cover" alt="">
+                        <img src="/stock.PNG" class="w-100 h-100 object-cover" alt="">
                       </div>
                       <div class="col">
                         <div class="card-body">
