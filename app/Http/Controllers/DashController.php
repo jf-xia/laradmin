@@ -24,16 +24,40 @@ class DashController
         /*$rows = $page->paginate();*/
         $page->title = 'Report';
         $page->description = ' - LarAdmin Dashboard';
-        $usercount = DB::table('users')->count();
-        $taskcount = DB::table('tasks')->count();
+        /* basic table rows count*/
+        $userCount = DB::table('users')->count();
+        $taskCount = DB::table('tasks')->count();
         $pageCount = DB::table('pages')->count();
         $sourceCount = DB::table('sources')->count();
-    
-        $users = DB::table('users')->select(DB::raw('*'))
-              ->whereRaw('Date(created_at) = CURDATE()')->count();
-        
+        $articleCount = DB::table('articles')->count();
+        $count = DB::table('sources')
+                 ->select('category', DB::raw('count(*) as total'))
+                 ->groupBy('category')
+                 ->get();
+        $artcount = DB::table('articles')
+                 ->select('source_id', DB::raw('count(*) as total'))
+                 ->orderby('total','desc')
+                 ->groupBy('source_id')
+                 ->take(10)
+                 ->get();
 
-        return view('tabler.reports.index',compact('page','usercount','taskcount','pageCount','users','sourceCount'));
+        $customer = DB::table('customers')->distinct('name')->count('name');
+        $contractCount = DB::table('contracts')->count();
+        $contracts = DB::table('contracts')
+        ->sum('amount');
+
+        $count = DB::table('sources')
+        ->select('category', DB::raw('count(*) as total'))
+        ->groupBy('category')
+        ->get();
+
+       
+
+
+    
+
+
+        return view('tabler.reports.index',compact('page','userCount','taskCount','pageCount','sourceCount','count','artcount','contracts','articleCount','customer','contractCount'));
     }
 
     /**
