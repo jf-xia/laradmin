@@ -22,7 +22,6 @@ Route::group([
     'middleware' => 'auth'
 ], function ($router) {
     
-    $router->resource('/customer', 'CustomerController');
     $router->post('/api/tencent/textTranslate', 'Api\TencentController@textTranslate');
     
     // $router->group(['middleware' => ['role:admin']], function($router) {});
@@ -44,6 +43,7 @@ Route::group([
     /*Route::get('/map', 'mapController@index');
     /* To download the latest list of news sources if the source table is nothing*/
     /*Route::get('/', 'SourceController@backup');*/
+    $router->resource('/customer', 'CustomerController');
     
 });
 
