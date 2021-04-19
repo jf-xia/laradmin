@@ -7,12 +7,10 @@
 * Copyright 2018-2021 codecalm.net Paweł Kuna
 * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
 --}}
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
-    
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -37,10 +35,10 @@
       <div class="container-xl">
         <div class="content-header">
           <section class="content-header breadcrumbs-top">
-              <h1 class=" float-left">
+              <h2 class="float-left">
                   <span class="text-capitalize">{{ $page->title }}</span>
                   <small>{!! $page->description !!}</small>
-              </h1>
+              </h2>
           </section>
         </div>
 

@@ -18,9 +18,8 @@ class ArticleController extends Controller
             'Accept'       => 'application/json',
             'Content-Type' => 'application/json',
             'query' => [
-                
                 'source'       => $source->id,
-                'apiKey'       => '715d01f80aa545b78838e9a7b76b9807',
+                'apiKey'       => env('NEWS_SECRET_KEY'),
             ],
         ]);
 
