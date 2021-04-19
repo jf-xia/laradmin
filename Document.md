@@ -9,7 +9,7 @@ Inspired by [laravel-admin](https://laravel-admin.org/docs/en/).
 GitHub committed Logs List:
 https://github.com/jf-xia/laradmin/commits/main
 
-## A Sample Usage Scenario
+## A Sample Low-code Page Builder Scenario
 
 1. A user Jack registers a new account.
 2. Jack logs in with his email and password.
@@ -40,7 +40,7 @@ https://github.com/jf-xia/laradmin/commits/main
 
 ## A Sample CRM system Design Scenario
 
-1. Run SQL script 'storage/app/mysql/laradmin2021_04_06_16_03_31.sql' in mysql database, some new table will be created: customers, leads, contracts, and those pages and its JSON are already set in.
+1. Run SQL script 'storage/app/mysql/laradmin2021_04_14_16_59_32.sql' in mysql database, some new table will be created: customers, leads, contracts, and those pages and its JSON are already set in.
 2. A new user Joseph registers a new account.
 3. Joseph logs in with his email and password.
 4. Only administrator can see all menus, so in this scenario Joseph can only see Customer page.
@@ -152,4 +152,8 @@ https://github.com/jf-xia/laradmin/commit/ee9e80b8b775e35e571f03c40efcb7d642a22b
 
 ## Module 7: CRM system
 
-
+1. Create Customer Model and add relation to User Model by user_id.
+2. Add a relational ID customer_id to relate tables to the customer in Lead, Task, Contract. Then, customer edit page will only show the data list related to the customer. 
+3. Create CustomerController and auto save user_id as current login user with other fields when update or create.
+4. Validate data when Create or update in CustomerController. 
+5. Create Customer edit page, this page will show some Customer information and Customer's related tables such as: Lead, Task, Contract. You can add any other table by Low-code Page Builder Scenario and add the page Id in $relations = Page::query()->findMany([28,29,30]) in CustomerController edit function.
