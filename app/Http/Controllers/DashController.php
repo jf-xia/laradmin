@@ -50,13 +50,6 @@ class DashController
         ->select('category', DB::raw('count(*) as total'))
         ->groupBy('category')
         ->get();
-
-       
-
-
-    
-
-
         return view('tabler.reports.index',compact('page','userCount','taskCount','pageCount','sourceCount','count','artcount','contracts','articleCount','customer','contractCount'));
     }
 

@@ -42,7 +42,8 @@ class Form extends Widget
   protected function formatAttributes($attributes)
   {
       $html = [];
-
+      unset($attributes['front']);
+      unset($attributes['label']);
       foreach ($attributes as $name => $value) {
           $html[] = $name.'="'.e($value).'"';
       }
