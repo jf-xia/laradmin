@@ -15,7 +15,7 @@
                       </span>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {{ 'page/customer'==request()->path() ? 'active':'' }}">
                     <a class="nav-link" href="/page/customer" >
                       <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="7" cy="5" r="2" /><path d="M5 22v-5l-1 -1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5" /><circle cx="17" cy="5" r="2" /><path d="M15 22v-4h-2l2 -6a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1l2 6h-2v4" /></svg>
                       </span>
@@ -26,8 +26,8 @@
                   </li>
                   <?php $user = \Auth::user(); ?>
                   @if($user->hasRole('admin'))
-                  <li class="nav-item">
-                    <a class="nav-link {{ 'report'==request()->path() ? 'active':'' }}" href="{{ route('report.index') }}" >
+                  <li class="nav-item {{ 'report'==request()->path() ? 'active':'' }}">
+                    <a class="nav-link" href="{{ route('report.index') }}" >
                       <span class="nav-link-icon d-md-none d-lg-inline-block"><svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a0.9 .9 0 0 0 -1 -.8" /><path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5" /></svg>
                       </span>
                       <span class="nav-link-title">

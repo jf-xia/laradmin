@@ -13,16 +13,16 @@ https://github.com/jf-xia/laradmin/commits/main
 
 1. A user Jack registers a new account.
 2. Jack logs in with his email and password.
-3. administrator (Account: admin@admin.com; Password: 11111111) attach a admin role to the user Jack ![rbac](doc/rbac.png)
-4. Jack is a administrator now, and he can access Page and Role Management after he got administrator role
-5. Jack create a new table tasks by phpMyAdmin
+3. administrator (Account: admin@admin.com; Password: 11111111) attach an admin role to the user Jack ![rbac](doc/rbac.png)
+4. Jack is an administrator now, and he can access Page and Role Management after he got administrator role
+5. Jack create a new table "tasks" by phpMyAdmin
    1. `id` int unsigned NOT NULL AUTO_INCREMENT,
    2. `title` varchar(255),
    3. `start_at` datetime,
    4. `created_at` timestamp,
    5. `updated_at` timestamp,
    6. `deleted_at` timestamp,
-6. Jack Create a new Page "Task" by fill some fields, validation error will display if title and url are empty.
+6. Jack Create a new Page "Task" by filling some fields, validation error will display if title and URL are empty.
    1. Title: Task Management
    2. URL: page/tasks
    3. Model: App\Models\System\Model|tasks
@@ -35,21 +35,21 @@ https://github.com/jf-xia/laradmin/commits/main
 12. Jack can develop a new field widget.
     1.  create date.blade.php in view/tabler/widgets/form, include HTML, CSS, and JS
     2.  add a new date(...) function in app/Widgets/Form.php
-13. Jack can develop a new page widget by create a new Class in app/Widgets, and JSON template in page view files(create and edit).
+13. Jack can develop a new page widget by creating a new Class in app/Widgets, and JSON template in page view files(create and edit).
 
 
 ## A Sample CRM system Design Scenario
 
-1. Run SQL script 'storage/app/mysql/laradmin2021_04_14_16_59_32.sql' in mysql database, some new table will be created: customers, leads, contracts, and those pages and its JSON are already set in.
+1. Run SQL script 'storage/app/mysql/laradmin2021_04_14_16_59_32.sql' in mysql database, some new tables will be created, including customers, leads, contracts, and those pages and its JSON are already set in.
 2. A new user Joseph registers a new account.
 3. Joseph logs in with his email and password.
-4. Only administrator can see all menus, so in this scenario Joseph can only see Customer page.
-5. Joseph can see all customers and create new customer, but he can only edit or delete his own customer. Otherwise, system will show an error: 401 Unauthorized.
+4. Only the administrator can see all menus, so in this scenario, Joseph can only see the customer page.
+5. Joseph can see all customers and create new customer, but he can only edit or delete his own customer. Otherwise, the system will show an error: 401 Unauthorized.
 6. Joseph can create a new customer "HKU".
 7. Joseph can click edit "HKU" customer to the edit page.
-8. Joseph can update customer name to "The University of Hong Kong" in the edit page.
-9. Joseph can also create or delete tasks, leads and contracts related to "HKU" in the edit page.
-10. By using Page Management and mysql to create pages and tables, administrator can add more Relational Entities to customer, such as: opportunity, contact, campaign, quote, product, competitor, invoice, receipt, etc...
+8. Joseph can update the customer name to "The University of Hong Kong" in the edit page.
+9. Joseph can also create or delete tasks, leads and contracts related to "HKU" on the edit page.
+10. By using Page Management and mysql to create pages and tables, the administrator can add more Relational Entities to customer edit page, such as opportunity, contact, campaign, quote, product, competitor, invoice, receipt, etc...
 
 ![CRM Edit page](doc/crm-edit.png)
     
@@ -156,4 +156,16 @@ https://github.com/jf-xia/laradmin/commit/ee9e80b8b775e35e571f03c40efcb7d642a22b
 2. Add a relational ID customer_id to relate tables to the customer in Lead, Task, Contract. Then, customer edit page will only show the data list related to the customer. 
 3. Create CustomerController and auto save user_id as current login user with other fields when update or create.
 4. Validate data when Create or update in CustomerController. 
-5. Create Customer edit page, this page will show some Customer information and Customer's related tables such as: Lead, Task, Contract. You can add any other table by Low-code Page Builder Scenario and add the page Id in $relations = Page::query()->findMany([28,29,30]) in CustomerController edit function.
+5. Create customer edit page, this page will show some customer information and customer's related tables such as: Lead, Task, Contract. You can add any other table by Low-code Page Builder Scenario and add the page Id in $relations = Page::query()->findMany([28,29,30]) in CustomerController edit function.
+6. Create  A toastr Success/Error popup will show when create, update and delete are done.
+7. Only Admin user can see sub menus for pages
+
+![Customer List](doc/customer_list.png)
+
+![Customer Edit](doc/customer_edit.png)
+
+![Customer Entity Create](doc/customer_entity_create.png)
+
+GitHub committed Log:
+https://github.com/jf-xia/laradmin/commit/d477dc99359bf21f480a6d8e508ddef33169956e
+
