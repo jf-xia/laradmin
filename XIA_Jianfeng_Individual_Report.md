@@ -188,8 +188,9 @@ https://github.com/jf-xia/laradmin/commit/d477dc99359bf21f480a6d8e508ddef3316995
 ![HTML Validator](doc/htmlValidator.png)
 
 ## Program Files and Descriptions
-|||
-|::|::|
+
+|Program Files|Descriptions|
+|:-|:-|
 |	├── XIA_Jianfeng_Individual_Report.md	|	XIA Jianfeng Individual Report	|
 |	├── LICENSE	|	Project License MIT	|
 |	├── README.md	|	Project ReadMe	|
@@ -197,7 +198,7 @@ https://github.com/jf-xia/laradmin/commit/d477dc99359bf21f480a6d8e508ddef3316995
 |	│   ├── Http	|		|
 |	│   │   ├── Controllers	|		|
 |	│   │   │   ├── Api	|		|
-|	│   │   │   │   └── TencentController.php	|	textTranslate	|
+|	│   │   │   │   └── TencentController.php	|	Tencent textTranslate API	|
 |	│   │   │   ├── Auth	|	From Laravel Auth Generator	|
 |	│   │   │   ├── System	|		|
 |	│   │   │   │   ├── ModelController.php	|	Get Current Model and create & upload file & delete to the Model	|
