@@ -201,7 +201,7 @@ https://github.com/jf-xia/laradmin/commit/d477dc99359bf21f480a6d8e508ddef3316995
 |	│   │   │   │   └── TencentController.php	|	Tencent textTranslate API	|
 |	│   │   │   ├── Auth	|	From Laravel Auth Generator	|
 |	│   │   │   ├── System	|		|
-|	│   │   │   │   ├── ModelController.php	|	Get Current Model and create & upload file & delete to the Model	|
+|	│   │   │   │   ├── ModelController.php	|	Get Current Model and search, create & upload file & delete to the Model	|
 |	│   │   │   │   └── PageController.php	|	Page Create, Read/List, Update, Delete action	|
 |	│   │   │   ├── CustomerController.php	|	Customer Create, Update, Delete action with Role based Access Control and Relation Entities	|
 |	│   │   └── Requests	|		|
@@ -265,9 +265,9 @@ https://github.com/jf-xia/laradmin/commit/d477dc99359bf21f480a6d8e508ddef3316995
 |	│           │   ├── container.blade.php	|	backend template	|
 |	│           │   └── page.blade.php	|	page template	|
 |	│           ├── pages	|		|
-|	│           │   ├── create.blade.php	|	create pages for page management	|
-|	│           │   ├── edit.blade.php	|	edit pages for page management	|
-|	│           │   └── index.blade.php	|	list pages for page management	|
+|	│           │   ├── create.blade.php	|	create pages for page management, with json editor: js Validate, JSON templates	|
+|	│           │   ├── edit.blade.php	|	edit pages for page management, with json editor: js Validate, JSON templates	|
+|	│           │   └── index.blade.php	|	list pages for page management, and ajax delete action	|
 |	│           ├── partials	|		|
 |	│           │   ├── alerts.blade.php	|	show alerts or errors for Data validations	|
 |	│           │   ├── header.blade.php	|	show header and top menu	|

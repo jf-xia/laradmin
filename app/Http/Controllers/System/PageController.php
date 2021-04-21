@@ -18,10 +18,9 @@ class PageController
 {
     /**
      * List page
-     * @param Request $req
      * @return view
      */
-    public function index(Request $req)
+    public function index()
     {
         $user = \Auth::user();
         if (!$user->hasRole('admin')) {
