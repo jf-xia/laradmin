@@ -188,99 +188,101 @@ https://github.com/jf-xia/laradmin/commit/d477dc99359bf21f480a6d8e508ddef3316995
 ![HTML Validator](doc/htmlValidator.png)
 
 ## Program Files and Descriptions
-├── XIA_Jianfeng_Individual_Report.md							XIA Jianfeng's Individual Report
-├── LICENSE							Project License MIT
-├── README.md							Project ReadMe
-├── app							
-│   ├── Http							
-│   │   ├── Controllers							
-│   │   │   ├── Api							
-│   │   │   │   └── TencentController.php							textTranslate
-│   │   │   ├── Auth							From Laravel Auth Generator
-│   │   │   ├── System							
-│   │   │   │   ├── ModelController.php							Get Current Model and create & upload file & delete to the Model
-│   │   │   │   └── PageController.php							Page Create, Read/List, Update, Delete action
-│   │   │   ├── CustomerController.php							Customer Create, Update, Delete action with Role based Access Control and Relation Entities
-│   │   └── Requests							
-│   │       └── PageRequest.php							Page Request Data Validations
-│   ├── Models							
-│   │   ├── System							
-│   │   │   ├── Model.php							Auto Set table name to model
-│   │   │   └── Page.php							Page Model with Build page by template json and App\Widgets and cache
-│   │   ├── Customer.php							Get Customer Owner by belongsTo and SoftDeletes
-│   │   ├── Permission.php							SoftDeletes
-│   │   ├── Role.php							SoftDeletes
-│   ├── User.php							Add LaratrustUserTrait
-│   └── Widgets							
-│       ├── Form.php							form with field generator: date, translate, input
-│       ├── Table.php							table generator
-│       └── Widget.php							render html and __toString
-├── database							
-│   ├── migrations							
-│   │   ├── 2021_04_21_062436_create_contracts_table.php							contracts migrations file
-│   │   ├── 2021_04_21_062436_create_customers_table.php							customers migrations file
-│   │   ├── 2021_04_21_062436_create_leads_table.php							leads migrations file
-│   │   ├── 2021_04_21_062436_create_pages_table.php							pages migrations file
-│   │   └── 2021_04_21_062436_create_tasks_table.php							tasks migrations file
-├── doc							doc images
-├── public							
-│   ├── dist							
-│   │   ├── css							
-│   │   │   ├── tabler.*.css							From lib
-│   │   ├── js							
-│   │   │   ├── jquery-3.5.1.min.js							From lib
-│   │   │   └── tabler.min.js							From lib
-│   ├── logo.png							logo design
-│   ├── vendor							
-│   │   ├── jsoneditor							json editor for page management
-│   │   └── toastr							Display Messages
-├── resources							
-│   └── views							
-│       ├── auth							
-│       │   ├── login.blade.php							login page use tabler style
-│       │   ├── passwords							
-│       │   │   ├── confirm.blade.php							passwords confirm page use tabler style
-│       │   │   ├── email.blade.php							send email page use tabler style
-│       │   │   └── reset.blade.php							forgot password page use tabler style
-│       │   ├── register.blade.php							register page use tabler style
-│       │   └── verify.blade.php							forgot password get verification link  use tabler style
-│       ├── errors							
-│       │   ├── 401.blade.php							custom error pages
-│       │   ├── 403.blade.php							custom error pages
-│       │   ├── 404.blade.php							custom error pages
-│       │   ├── 419.blade.php							custom error pages
-│       │   ├── 429.blade.php							custom error pages
-│       │   ├── 500.blade.php							custom error pages
-│       │   ├── 503.blade.php							custom error pages
-│       │   └── minimal.blade.php							custom error template pages
-│       ├── layouts							
-│       │   └── app.blade.php							Auth login and register page template use tabler style
-│       └── tabler							
-│           ├── customers							
-│           │   └── edit.blade.php							custom edit page
-│           ├── layouts							
-│           │   ├── container.blade.php							backend template
-│           │   └── page.blade.php							page template
-│           ├── pages							
-│           │   ├── create.blade.php							create pages for page management
-│           │   ├── edit.blade.php							edit pages for page management
-│           │   └── index.blade.php							list pages for page management
-│           ├── partials							
-│           │   ├── alerts.blade.php							show alerts or errors for Data validations
-│           │   ├── header.blade.php							show header and top menu
-│           │   ├── sidebar.blade.php							pages menu for admin only
-│           │   └── toastr.blade.php							popup messages for success or fail
-│           └── widgets							
-│               ├── card.blade.php							card widget view
-│               ├── form							
-│               │   ├── date.blade.php							form field date widget view
-│               │   ├── input.blade.php							form field input widget view
-│               │   └── translate.blade.php							form field translate widget view
-│               ├── form.blade.php							form widget view
-│               └── table.blade.php							table widget view
-├── routes							
-│   └── web.php							some routes
-├── storage							
-│   ├── app							
-│   │   ├── mysql							
-│   │   │   └── laradmin2021_04_14_16_59_32.sql							sql script
+|||
+|::|::|
+|	├── XIA_Jianfeng_Individual_Report.md	|	XIA Jianfeng Individual Report	|
+|	├── LICENSE	|	Project License MIT	|
+|	├── README.md	|	Project ReadMe	|
+|	├── app	|		|
+|	│   ├── Http	|		|
+|	│   │   ├── Controllers	|		|
+|	│   │   │   ├── Api	|		|
+|	│   │   │   │   └── TencentController.php	|	textTranslate	|
+|	│   │   │   ├── Auth	|	From Laravel Auth Generator	|
+|	│   │   │   ├── System	|		|
+|	│   │   │   │   ├── ModelController.php	|	Get Current Model and create & upload file & delete to the Model	|
+|	│   │   │   │   └── PageController.php	|	Page Create, Read/List, Update, Delete action	|
+|	│   │   │   ├── CustomerController.php	|	Customer Create, Update, Delete action with Role based Access Control and Relation Entities	|
+|	│   │   └── Requests	|		|
+|	│   │       └── PageRequest.php	|	Page Request Data Validations	|
+|	│   ├── Models	|		|
+|	│   │   ├── System	|		|
+|	│   │   │   ├── Model.php	|	Auto Set table name to model	|
+|	│   │   │   └── Page.php	|	Page Model with Build page by template json and App\Widgets and cache	|
+|	│   │   ├── Customer.php	|	Get Customer Owner by belongsTo and SoftDeletes	|
+|	│   │   ├── Permission.php	|	SoftDeletes	|
+|	│   │   ├── Role.php	|	SoftDeletes	|
+|	│   ├── User.php	|	Add LaratrustUserTrait	|
+|	│   └── Widgets	|		|
+|	│       ├── Form.php	|	form with field generator: date, translate, input	|
+|	│       ├── Table.php	|	table generator	|
+|	│       └── Widget.php	|	render html and __toString	|
+|	├── database	|		|
+|	│   ├── migrations	|		|
+|	│   │   ├── 2021_04_21_062436_create_contracts_table.php	|	contracts migrations file	|
+|	│   │   ├── 2021_04_21_062436_create_customers_table.php	|	customers migrations file	|
+|	│   │   ├── 2021_04_21_062436_create_leads_table.php	|	leads migrations file	|
+|	│   │   ├── 2021_04_21_062436_create_pages_table.php	|	pages migrations file	|
+|	│   │   └── 2021_04_21_062436_create_tasks_table.php	|	tasks migrations file	|
+|	├── doc	|	doc images	|
+|	├── public	|		|
+|	│   ├── dist	|		|
+|	│   │   ├── css	|		|
+|	│   │   │   ├── tabler.*.css	|	From lib	|
+|	│   │   ├── js	|		|
+|	│   │   │   ├── jquery-3.5.1.min.js	|	From lib	|
+|	│   │   │   └── tabler.min.js	|	From lib	|
+|	│   ├── logo.png	|	logo design	|
+|	│   ├── vendor	|		|
+|	│   │   ├── jsoneditor	|	json editor for page management	|
+|	│   │   └── toastr	|	Display Messages	|
+|	├── resources	|		|
+|	│   └── views	|		|
+|	│       ├── auth	|		|
+|	│       │   ├── login.blade.php	|	login page use tabler style	|
+|	│       │   ├── passwords	|		|
+|	│       │   │   ├── confirm.blade.php	|	passwords confirm page use tabler style	|
+|	│       │   │   ├── email.blade.php	|	send email page use tabler style	|
+|	│       │   │   └── reset.blade.php	|	forgot password page use tabler style	|
+|	│       │   ├── register.blade.php	|	register page use tabler style	|
+|	│       │   └── verify.blade.php	|	forgot password get verification link  use tabler style	|
+|	│       ├── errors	|		|
+|	│       │   ├── 401.blade.php	|	custom error pages	|
+|	│       │   ├── 403.blade.php	|	custom error pages	|
+|	│       │   ├── 404.blade.php	|	custom error pages	|
+|	│       │   ├── 419.blade.php	|	custom error pages	|
+|	│       │   ├── 429.blade.php	|	custom error pages	|
+|	│       │   ├── 500.blade.php	|	custom error pages	|
+|	│       │   ├── 503.blade.php	|	custom error pages	|
+|	│       │   └── minimal.blade.php	|	custom error template pages	|
+|	│       ├── layouts	|		|
+|	│       │   └── app.blade.php	|	Auth login and register page template use tabler style	|
+|	│       └── tabler	|		|
+|	│           ├── customers	|		|
+|	│           │   └── edit.blade.php	|	custom edit page	|
+|	│           ├── layouts	|		|
+|	│           │   ├── container.blade.php	|	backend template	|
+|	│           │   └── page.blade.php	|	page template	|
+|	│           ├── pages	|		|
+|	│           │   ├── create.blade.php	|	create pages for page management	|
+|	│           │   ├── edit.blade.php	|	edit pages for page management	|
+|	│           │   └── index.blade.php	|	list pages for page management	|
+|	│           ├── partials	|		|
+|	│           │   ├── alerts.blade.php	|	show alerts or errors for Data validations	|
+|	│           │   ├── header.blade.php	|	show header and top menu	|
+|	│           │   ├── sidebar.blade.php	|	pages menu for admin only	|
+|	│           │   └── toastr.blade.php	|	popup messages for success or fail	|
+|	│           └── widgets	|		|
+|	│               ├── card.blade.php	|	card widget view	|
+|	│               ├── form	|		|
+|	│               │   ├── date.blade.php	|	form field date widget view	|
+|	│               │   ├── input.blade.php	|	form field input widget view	|
+|	│               │   └── translate.blade.php	|	form field translate widget view	|
+|	│               ├── form.blade.php	|	form widget view	|
+|	│               └── table.blade.php	|	table widget view	|
+|	├── routes	|		|
+|	│   └── web.php	|	some routes	|
+|	├── storage	|		|
+|	│   ├── app	|		|
+|	│   │   ├── mysql	|		|
+|	│   │   │   └── laradmin2021_04_14_16_59_32.sql	|	sql script	|
