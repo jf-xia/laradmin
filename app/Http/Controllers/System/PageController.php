@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Session;
 
 class PageController
 {
-
+    /**
+     * List page
+     * @param Request $req
+     * @return view
+     */
     public function index(Request $req)
     {
         $user = \Auth::user();
@@ -30,6 +34,10 @@ class PageController
         return view('tabler.pages.index',compact('page','rows'));
     }
 
+    /**
+     * create page
+     * @return view
+     */
     public function create()
     {
         $page = new Page();
@@ -38,6 +46,11 @@ class PageController
         return view('tabler.pages.create',compact('page'));
     }
 
+    /**
+     * show page
+     * @param int $id
+     * @return view
+     */
     public function show($id)
     {
         $page=Page::query()->firstWhere('url','page/'.$id);
@@ -47,6 +60,11 @@ class PageController
         return view('tabler.layouts.page',compact('page'));
     }
 
+    /**
+     * store page
+     * @param PageRequest $request
+     * @return redirect
+     */
     public function store(PageRequest $request)
     {
         //TODO validation
@@ -61,6 +79,11 @@ class PageController
         return redirect(route('page.index'));
     }
 
+    /**
+     * edit page
+     * @param int $id
+     * @return view
+     */
     public function edit($id)
     {
         $page = Page::find($id);
@@ -70,6 +93,12 @@ class PageController
         return view('tabler.pages.edit',compact('page'));
     }
 
+    /**
+     * update page
+     * @param int $id
+     * @param PageRequest $request
+     * @return redirect
+     */
     public function update(PageRequest $request, $id)
     {
         $data = $request->except(['_token','_method']);
@@ -83,6 +112,11 @@ class PageController
         return redirect(route('page.index'));
     }
 
+    /**
+     * delete page
+     * @param int $id
+     * @return json
+     */
     public function destroy($id)
     {
         $user = \Auth::user();

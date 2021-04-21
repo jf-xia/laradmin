@@ -1,0 +1,122 @@
+├── Document.md
+├── LICENSE
+├── README.md
+├── app
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   ├── Api
+│   │   │   │   └── TencentController.php
+│   │   │   ├── Auth
+│   │   │   │   ├── ConfirmPasswordController.php
+│   │   │   │   ├── ForgotPasswordController.php
+│   │   │   │   ├── LoginController.php
+│   │   │   │   ├── PermissionController.php
+│   │   │   │   ├── RegisterController.php
+│   │   │   │   ├── ResetPasswordController.php
+│   │   │   │   ├── RoleController.php
+│   │   │   │   ├── UserController.php
+│   │   │   │   └── VerificationController.php
+│   │   │   ├── System
+│   │   │   │   ├── ModelController.php
+│   │   │   │   └── PageController.php
+│   │   │   ├── ArticleController.php
+│   │   │   ├── CustomerController.php
+│   │   │   ├── DashController.php
+│   │   │   ├── SourceController.php
+│   │   │   └── taskController.php
+│   │   └── Requests
+│   │       └── PageRequest.php
+│   ├── Models
+│   │   ├── System
+│   │   │   ├── Model.php
+│   │   │   └── Page.php
+│   │   ├── Customer.php
+│   │   ├── Permission.php
+│   │   ├── Role.php
+│   │   └── task.php
+│   ├── User.php
+│   └── Widgets
+│       ├── Form.php
+│       ├── Table.php
+│       └── Widget.php
+├── database
+│   ├── migrations
+│   │   ├── 2017_05_02_091800_create_sources_table.php
+│   │   ├── 2017_05_02_093615_create_articles_table.php
+│   │   ├── 2021_04_21_062436_create_contracts_table.php
+│   │   ├── 2021_04_21_062436_create_customers_table.php
+│   │   ├── 2021_04_21_062436_create_leads_table.php
+│   │   ├── 2021_04_21_062436_create_pages_table.php
+│   │   └── 2021_04_21_062436_create_tasks_table.php
+├── doc
+├── public
+│   ├── blacklogo.PNG
+│   ├── dist
+│   │   ├── css
+│   │   │   ├── tabler.*.css
+│   │   ├── js
+│   │   │   ├── jquery-3.5.1.min.js
+│   │   │   └── tabler.min.js
+│   │   └── libs
+│   │       ├── apexcharts
+│   ├── logo.png
+│   ├── vendor
+│   │   ├── jsoneditor
+│   │   └── toastr
+├── resources
+│   └── views
+│       ├── auth
+│       │   ├── login.blade.php
+│       │   ├── passwords
+│       │   │   ├── confirm.blade.php
+│       │   │   ├── email.blade.php
+│       │   │   └── reset.blade.php
+│       │   ├── register.blade.php
+│       │   └── verify.blade.php
+│       ├── errors
+│       │   ├── 401.blade.php
+│       │   ├── 403.blade.php
+│       │   ├── 404.blade.php
+│       │   ├── 419.blade.php
+│       │   ├── 429.blade.php
+│       │   ├── 500.blade.php
+│       │   ├── 503.blade.php
+│       │   └── minimal.blade.php
+│       ├── layouts
+│       │   └── app.blade.php
+│       ├── news.blade.php
+│       └── tabler
+│           ├── customers
+│           │   └── edit.blade.php
+│           ├── layouts
+│           │   ├── container.blade.php
+│           │   └── page.blade.php
+│           ├── pages
+│           │   ├── create.blade.php
+│           │   ├── edit.blade.php
+│           │   └── index.blade.php
+│           ├── partials
+│           │   ├── alerts.blade.php
+│           │   ├── header.blade.php
+│           │   ├── sidebar.blade.php
+│           │   └── toastr.blade.php
+│           ├── reports
+│           │   └── index.blade.php
+│           └── widgets
+│               ├── card.blade.php
+│               ├── form
+│               │   ├── date.blade.php
+│               │   ├── input.blade.php
+│               │   ├── map.blade.php
+│               │   └── translate.blade.php
+│               ├── form.blade.php
+│               └── table.blade.php
+├── routes
+│   ├── api.php
+│   ├── channels.php
+│   ├── console.php
+│   └── web.php
+├── storage
+│   ├── app
+│   │   ├── mysql
+│   │   │   └── laradmin2021_04_14_16_59_32.sql

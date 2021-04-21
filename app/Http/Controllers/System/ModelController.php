@@ -19,6 +19,10 @@ class ModelController
     private $modelName;
     private $model;
 
+    /**
+     * construct $this->model before load page
+     * @return void
+     */
     public function __construct()
     {
         $this->modelName = explode('.', Route::currentRouteName())[0];
@@ -27,13 +31,11 @@ class ModelController
 
     /**
      * Model store to Database
+     * @param Request $request
+     * @return redirect Previous page
      */
     public function store(Request $request)
     {
-        //TODO validate
-        // $request->validate([
-        //     $key => 'image|mimes:jpeg, png, jpg, doc, docx, xls, xlsx, ppt, pptx|max:15120'
-        // ]);
         try {
             foreach ($request->except(['_token']) as $key => $value) {
                 if ($value instanceof \Illuminate\Http\UploadedFile) {
@@ -53,6 +55,8 @@ class ModelController
     
     /**
      * file upload
+     * @param file $file
+     * @return string
      */
     public function uploadFile($file)
     {
@@ -71,6 +75,11 @@ class ModelController
         return 'https://'.$result->offsetGet('Location');
     }
 
+    /**
+     * destroy model entity and delete data row
+     * @param int $id
+     * @return json
+     */
     public function destroy($id)
     {
         try {
