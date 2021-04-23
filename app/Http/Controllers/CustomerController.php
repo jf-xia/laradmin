@@ -13,6 +13,8 @@ class CustomerController
 
     /**
      * customer edit page
+     * @param int $id
+     * @return view
      */
     public function edit($id)
     {
@@ -29,7 +31,10 @@ class CustomerController
     }
 
     /**
-     * customer update to Database
+     * customer update in Database
+     * @param int $id
+     * @param Request $request
+     * @return redirect show page
      */
     public function update(Request $request, $id)
     {
@@ -47,7 +52,9 @@ class CustomerController
     }
 
     /**
-     * customer store to Database
+     * customer store in Database
+     * @param Request $request
+     * @return redirect edit page
      */
     public function store(Request $request)
     {
@@ -69,6 +76,11 @@ class CustomerController
         return redirect(route('customer.edit',['customer'=>$customer->id]));
     }
 
+    /**
+     * customer delete in Database
+     * @param int $id
+     * @return json
+     */
     public function destroy($id)
     {
         try {

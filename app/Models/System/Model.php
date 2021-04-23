@@ -31,6 +31,4 @@ class Model extends Eloquent
       parent::__construct($attributes);
   }
 
-  // hasMany data owners 
-
 }

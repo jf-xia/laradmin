@@ -7,7 +7,7 @@ class Table extends Widget
   /**
    * @param Model $modelObject
    * @param Array $data
-   * @$data
+   * @return void
    */
   public function __construct($modelObject,$data)
   {

@@ -37,18 +37,10 @@ Route::group([
     $router->resource('/role', 'Auth\RoleController');
     $router->resource('/permission', 'Auth\PermissionController');
     $router->resource('/report','DashController');
-    /*$router->resource('/task','taskController');*/
     Route::get('/tasks/show/{id}', 'taskController@show');
     Route::get('/', 'ArticleController@index');
-    /*Route::get('/map', 'mapController@index');
-    /* To download the latest list of news sources if the source table is nothing*/
-    /*Route::get('/', 'SourceController@backup');*/
     $router->resource('/customer', 'CustomerController');
     
 });
 
-
-
-
-/**/
 Auth::routes();

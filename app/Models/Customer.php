@@ -9,12 +9,6 @@ class Customer extends Eloquent
 {
   use SoftDeletes;
 
-  /**
-   * The table associated with the model.
-   *
-   * @var string
-   */
-  protected $table;
   protected $guarded = [];
   protected $casts = [];
 

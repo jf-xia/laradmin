@@ -14,6 +14,10 @@ class Page extends Model
   private $html='';
   private $modelObject;
 
+  /**
+   * Build page by template json and App\Widgets
+   * @return string
+   */
   public function html($where = '',$whereIs = '')
   {
     $modelN = explode('|',$this->model);
@@ -35,6 +39,10 @@ class Page extends Model
     return $this->html;
   }
 
+  /**
+   * cache all page entities
+   * @return collect
+   */
   public function pageCache()
   {
     $cacheKey = 'pages';
@@ -43,7 +51,5 @@ class Page extends Model
     }
     return cache($cacheKey);
   }
-
-  //TODO On Save clear cache
 
 }

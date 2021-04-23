@@ -13,6 +13,10 @@ use TencentCloud\Tmt\V20180321\Models\TextTranslateRequest;
 
 class TencentController
 {
+    /**
+     * Tencent textTranslate API
+     * @return json
+     */
     public function textTranslate()
     {
         try {
