@@ -1,5 +1,6 @@
 
 @extends('tabler.layouts.container')
+
 @section('page')
 
   <div class="antialiased">
@@ -177,7 +178,12 @@
             </div>
         
 			<canvas id="canvas" height="280" width="600"></canvas>
-
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
     <!-- Libs JS -->
     <script src="./dist/libs/apexcharts/dist/apexcharts.min.js"></script>
     <!-- Tabler Core -->
@@ -374,8 +380,5 @@
       });
       // @formatter:on
     </script>
-
-  </div>
-
 
   @endsection

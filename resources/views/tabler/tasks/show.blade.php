@@ -94,6 +94,11 @@
                               {{ $object->name }}
                              @endforeach
                           </h3>
+                          <br>
+                          <b>Customer details:</b>
+                          <h3>@foreach ($customer as $object)
+                            {{ $object->details }}
+                          @endforeach</h3>
                           <div class="col-12">
               <div class="card">
                 <div class="table-responsive">
