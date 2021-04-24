@@ -40,6 +40,10 @@ Route::group([
     Route::get('/tasks/show/{id}', 'taskController@show');
     Route::get('/', 'ArticleController@index');
     $router->resource('/customer', 'CustomerController');
+    Route::get('/settings', 'UserController@index');
+    Route::post('/settings', 'UserController@update');
+    
+    
     
 });
 

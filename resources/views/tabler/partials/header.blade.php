@@ -73,8 +73,8 @@
           <?php $user = \Auth::user(); ?>
           <div class="dropdown-item"><span >Hi, {{ $user->name }}</span></div>
           <div class="dropdown-divider"></div>
-          <a  class = "dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-simple">Profile</a>
-         
+          <a  class = "dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-simple1">Profile</a>
+          <a  class = "dropdown-item" href="{{ url('settings') }}">Settings</a>
           <form id="logout" method="post" action="{{ route('logout') }}">
             @csrf
             <a href="javascript:document.getElementById('logout').submit();" class="dropdown-item">Logout</a>
@@ -85,11 +85,8 @@
   </div>
  
 
-
-  
-
 </header>
-<div class="modal modal-blur fade" id="modal-simple" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal modal-blur fade" id="modal-simple1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -117,3 +114,4 @@
         </div>
       </div>
     </div>  
+    
