@@ -74,7 +74,7 @@
           <div class="dropdown-item"><span >Hi, {{ $user->name }}</span></div>
           <div class="dropdown-divider"></div>
           <a  class = "dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-simple1">Profile</a>
-          <a  class = "dropdown-item" href="{{ url('settings') }}">settings</a>
+          <a  class = "dropdown-item" href="{{ url('settings') }}">Settings</a>
           <form id="logout" method="post" action="{{ route('logout') }}">
             @csrf
             <a href="javascript:document.getElementById('logout').submit();" class="dropdown-item">Logout</a>

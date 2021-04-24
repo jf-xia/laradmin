@@ -44,6 +44,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+              <br>
+              <br>
+              <br>
                 <div class="card-header">{{Auth::user()->name}}'s Profile</div>
                 
                 <div class="card-body">
