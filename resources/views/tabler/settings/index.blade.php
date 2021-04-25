@@ -63,11 +63,11 @@
                     <form action="{{url('settings')}}" method="POST">
                     @csrf
                        <div class="form-group">
-                           <label for="name"><strong>Name:</strong></label>
+                           <label for="name"><strong>Current Name: {{Auth::user()->name}}</strong></label>
                            <input type="text" class="form-control" id ="name" name="name" value="{{Auth::user()->name}}">
                        </div>
                         <div class="form-group">
-                           <label for="email"><strong>Email:</strong></label>
+                           <label for="email"><strong>Current Email: {{Auth::user()->email}}</strong></label>
                            <input type="text" class="form-control" id ="email" value="{{Auth::user()->email}}" name="email">
                        </div>
                         <button class="btn btn-primary" type="submit">Update Profile</button>
