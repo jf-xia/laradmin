@@ -62,6 +62,7 @@ class CustomerController
             'name' => 'required|unique:customers|max:255'
         ]);
         try {
+            dd($request->except(['_token']));
             $customer = new Customer();
             foreach ($request->except(['_token']) as $key => $value) {
                 $customer->$key = $value;

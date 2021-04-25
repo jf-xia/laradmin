@@ -8,24 +8,28 @@
           {{ method_field('PUT') }}
           {{ csrf_field() }}
           <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-8">
             <div class="mb-3">
               <label class="form-label">Name</label>
               <input type="text" value="{{ $customer->name }}" class="form-control" name="name" placeholder="Input name">
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <div class="mb-3">
               <label class="form-label">Owner</label>
               <div class="form-control-plaintext">{{$customer->user->name}}</div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
             <div class="mb-3">
               <div class="form-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>
             </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Details</label>
+            <textarea class="form-control" name="details" id="details" rows="6" placeholder="Content.." spellcheck="false">{{ $customer->details }}</textarea>
           </div>
         </form>
       </div>

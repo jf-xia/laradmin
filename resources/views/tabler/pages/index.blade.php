@@ -16,7 +16,6 @@
         <thead>
         <tr>
             <th>Title</th>
-            <th>Description</th>
             <th>URL</th>
             <th>Model</th>
             <!-- <th>Template</th> -->
@@ -27,7 +26,6 @@
         @foreach($rows->items() as $row)
         <tr>
             <td>{{ $row->title }}</td>
-            <td>{{ $row->description }}</td>
             <td>{{ $row->url }}</td>
             <td>{{ $row->model }}</td>
             <!-- <td>{{ $row->id }}</td> -->

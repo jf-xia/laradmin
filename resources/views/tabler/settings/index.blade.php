@@ -41,12 +41,21 @@
     <strong>Success: </strong>{{session()->get('message')}}
   </div>
   @endif
+    <div class="container-xl">
+      <!-- Page title -->
+      <div class="page-header d-print-none">
+        <div class="row align-items-center">
+          <div class="col">
+            <h2 class="page-title">
+              User Profile
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-              <br>
-              <br>
-              <br>
                 <div class="card-header">{{Auth::user()->name}}'s Profile</div>
                 
                 <div class="card-body">
@@ -63,14 +72,20 @@
                     <form action="{{url('settings')}}" method="POST">
                     @csrf
                        <div class="form-group">
-                           <label for="name"><strong>Current Name: {{Auth::user()->name}}</strong></label>
+                           <label class="form-label col-3 col-form-label control-label" for="name">
+                            <strong>Name: </strong></label>
                            <input type="text" class="form-control" id ="name" name="name" value="{{Auth::user()->name}}">
+                           <small class="form-hint">Current Name: {{Auth::user()->name}}</small>
                        </div>
                         <div class="form-group">
-                           <label for="email"><strong>Current Email: {{Auth::user()->email}}</strong></label>
+                           <label class="form-label col-3 col-form-label control-label" for="email">
+                            <strong>Email: </strong></label>
                            <input type="text" class="form-control" id ="email" value="{{Auth::user()->email}}" name="email">
+                           <small class="form-hint">Current Email: {{Auth::user()->email}}</small>
                        </div>
-                        <button class="btn btn-primary" type="submit">Update Profile</button>
+                       <div class="form-footer">
+                         <button type="submit" class="btn btn-primary">Update Profile</button>
+                       </div>
                    </form>
                 </div>
             </div>

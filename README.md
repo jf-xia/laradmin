@@ -50,15 +50,11 @@ Laravel = 6.20
 - [Laravel] (http://laravel.com)
 - [Tabler base Bootstrap 4.0] (https://github.com/tabler/tabler)
 - [apexcharts.js] (https://github.com/apexcharts/apexcharts.js)
-- [Form generator] (https://github.com/JakHuang/form-generator)
+- [JSONEditor] (https://github.com)
 - [Composer] (https://getcomposer.org/)
 - [MySQL] (https://mysql.com)
 - [NPM] (https://www.npmjs.com/)
 - [Chart.js] (https://www.chartjs.org/)
-
-## Open API
-- [Google Map] (http://Google.com)
-- [Cloud Object Storage] (Tencent Cloud)
 
 ## Demo Application
 

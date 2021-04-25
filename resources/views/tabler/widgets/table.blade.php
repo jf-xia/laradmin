@@ -110,7 +110,6 @@
         </div>
       </div>
     </div>
-                <td>
                 @else
                 <td>{{ $row->$col }}</td>
                 @endif
